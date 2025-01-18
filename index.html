@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <title>Oliveira Hambaena Portfolio</title>
+  <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            text-size-adjust: auto;
+            text-wrap: auto;
+        }
+
+        h1 {
+          text-transform: uppercase;
+        }
+
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Left Section */
+        .left-section {
+            background-color: #2c2f48;
+            color: #ffffff;
+            width: 32%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 2rem;
+            position: fixed;
+            overflow-y: auto;
+        }
+
+        .intro {
+            margin-bottom: 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer {
+            margin-top: auto;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .social-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .resume-link {
+            color: #ff7979;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center; /* Center links horizontally */
+            align-items: center; /* Align items vertically */
+            gap: 1rem; /* Space between links */
+        }
+
+        .navigation a {
+            color: #ffffff; /* White text */
+            text-decoration: none; /* Remove underline */
+            font-weight: bold;
+            padding: 0.5rem 1rem; /* Add padding for clickable area */
+            border: 2px solid transparent; /* Invisible border for hover effect */
+            border-radius: 5px; /* Rounded corners */
+            transition: all 0.3s ease; /* Smooth transitions */
+        }
+
+        .navigation a:hover {
+            color: #ff7979; /* Change color on hover */
+            border-color: #ff7979; /* Add border on hover */
+            background-color: rgba(255, 121, 121, 0.1); /* Subtle background */
+        }
+
+        .navigation a:active {
+            transform: scale(0.95); /* Press-down effect */
+        }
+
+        /* Right Section */
+        .right-section {
+          color: black;
+          font-family: "Luckiest Guy", cursive;
+  font-weight: 100;
+  font-style: normal;
+          letter-spacing: 0.2rem;
+          line-height: 1.2;
+            margin-left: 32%; /* Adjusted to match the left section width */
+            width: 68%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .section { 
+            padding: 2rem;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section p {
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .section {
+      display: none; /* Initially hide all sections */
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section {
+  display: none; /* Initially hide all sections */
+}
+
+#home {
+  display: block; /* Show the home section by default */
+}
+
+@media (max-width: 768px) {
+  /* Styles for smaller screens */
+  .left-section {
+    width: 40%;
+    /* Other adjustments */
+  }
+  .right-section {
+    width: 60%;
+    /* Other adjustments */
+  }
+}
+
+.right-section {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.section {
+  min-height: 100vh; /* Adjust as needed */
+}
+
+.cursor-shadow {
+  position: absolute;
+            width: 250px; /* Larger size for shadow */
+            height: 250px; /* Larger size for shadow */
+            border-radius: 70%;
+            pointer-events: none; /* Makes sure shadow does not interfere with user interactions */
+            transform: translate(-50%, -50%); /* Center the shadow on the cursor */
+            
+            /* Subtle gradient effect for seamless fade */
+            background: radial-gradient(circle, rgba(255, 121, 121, 0.193) 0%, rgba(230, 179, 179, 0) 70%);
+            
+            /* Box shadow to add an extra layer of blur */
+            box-shadow: #f5f5f5;
+            
+            transition: transform 0.15s ease-out;
+        }
+
+
+
+        @keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+      animation: slideInRight 2s forwards;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 2s forwards;
+    }
+
+    .homefonts {
+      font-family: "Luckiest Guy", cursive;
+      text-align: right;
+      font-size: 150px;
+      margin-top: 15%;
+      transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    }
+
+    .homefonts:hover { 
+      transform: translateY(-5px);
+      color: transparent; /* Text becomes transparent */
+      -webkit-text-stroke: 2px #0e0d0d; /* Outline effect for hollow text */
+    }
+
+    .para {
+      text-align: right;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <!-- Navigation -->
+            <div class="navigation">
+                <a href="#home" onclick="showSection('home')">Home</a>
+                <a href="#about" onclick="showSection('about')">About Me</a>
+                <a href="#projects" onclick="showSection('projects')">Projects</a>
+                <a href="#contact" onclick="showSection('contact')"> Contact</a>
+            </div>
+
+            <!-- Intro -->
+            <div style="text-align: center;margin-top: 50%;" class="intro">
+                <h3>Hi my name is</h3>
+                <h1 style="margin-bottom: 2rem; color: #ff7979;">OLIVEIRA HAMBAENA</h1>
+                <p style="color: #ff7979;">I am a</p>
+                <p id="typing"></p>
+            </div>
+
+            <div class="footer">
+              <div class="social-links">
+                <a href="https://twitter.com/big_thingMoWHK" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">Twitter</a>
+                <a href="https://github.com/OliveiraHambaena" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">GitHub</a>
+                <a href="https://na.linkedin.com/in/oliveira-hambaena-18580b275" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">LinkedIn</a>
+            </div>
+                <a href="resume.pdf" download class="resume-link">Download My Resume</a>
+                </div>
+        </div>
+
+
+        <!-- Right Section -->
+        <div class="right-section">
+
+            <div id="home" class="section slide in slide-in-right">
+              <h1 class="homefonts">Welcome to my page</h1>
+                <p class="para">A passionate software developer and designer, exploring the intersection of technology and creativity.</p>
+                <a class="para" href="#about" class="btn">Learn More</a>
+              </div>
+            
+            <!-- Sections -->
+            <div id="about" class="section slide-in-left">
+                <h1 class="homefonts">About Me</h1>
+                <p class="para">
+                    Hi, I'm Oliveira Hambaena, a 20-year-old software development student in my 3rd year at the Namibia University of Science and Technology, based in Windhoek, Namibia. My passion for technology started at a young age when I would explore every setting and feature of any electronic device I could get my hands on. This curiosity grew into a love for computers, leading me to develop skills in hardware repair, software troubleshooting, and operating system optimization — a field I aim to specialize in one day.
+                </p>
+                <p class="para">
+                    Over time, I turned my passion into a source of income by offering repair and support services for laptops, computers, and other hardware. Beyond technical problem-solving, I’m deeply enthusiastic about VFX, game design, and animation. My creativity extends to graphic design, where I believe I have a natural talent for crafting visually appealing designs. I’m always eager to push my limits by learning new programming languages, mastering VFX, and exploring deeper concepts in graphic design.
+                </p>
+                <p class="para">
+                    What sets me apart is my ability to connect with people. I enjoy collaborating with like-minded individuals who share the same goals and vision. I’m not the "typical computer geek" stereotype — I value time away from screens to gain new perspectives, which ultimately allows me to create work that is meaningful to people, not just impressive to tech enthusiasts. My dream is to one day work on operating system development, or in any field where I can merge creativity with technical problem-solving.
+                </p>
+            </div>
+
+            <div id="projects" class="section slide-in-right">
+                <h1 class="homefonts">Projects</h1>
+                <p class="para">
+                    Some highlights of my projects include:<br>
+                    - Management Systems<br>
+                    - Responsive Website Designs<br>
+                    - Game Development<br>
+                    - Creative Graphic Designs<br>
+                </p>
+            </div>
+
+            <div id="contact" class="section slide-in-left">
+                <h1 class="homefonts">Contact Me</h1>
+                <p class="para">
+                    Let’s connect! I enjoy working with people who share the same mindset and enthusiasm for technology. 
+                    Reach out for collaborations or discussions about exciting projects!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cursor-shadow"></div>
+
+    <script>
+        const typingText = ["software developer", "software designer", "graphic designer", "database administrator", "UI/UX developer", "3D modeller"];
+        let typingIndex = 0;
+        let charIndex = 0;
+        let typingSpeed = 100;
+    
+        const typingElement = document.getElementById('typing');
+    
+        function type() {
+          if (charIndex < typingText[typingIndex].length) {
+            typingElement.textContent += typingText[typingIndex][charIndex];
+            charIndex++;
+            setTimeout(type, typingSpeed);
+          } else {
+            setTimeout(erase, typingSpeed);
+          }
+        }
+    
+        function erase() {
+          if (charIndex > 0) {
+            typingElement.textContent = typingText[typingIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, typingSpeed);
+          } else {
+            typingIndex++;
+            if (typingIndex >= typingText.length) {
+              typingIndex = 0;
+            }
+            setTimeout(type, typingSpeed);
+          }
+        }
+    
+        type();
+
+        function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
+    
+    const cursorShadow = document.querySelector('.cursor-shadow');
+
+        // Add mousemove event to update shadow position
+        document.addEventListener('mousemove', (e) => {
+            const { clientX: x, clientY: y } = e;
+
+            // Move the shadow to follow the cursor
+            cursorShadow.style.left = `${x}px`;
+            cursorShadow.style.top = `${y}px`;
+        });
+
+        // Optional: Add hover effect scaling
+        document.addEventListener('mouseover', () => {
+            cursorShadow.style.transform = 'scale(1.2) translate(-50%, -50%)';
+        });
+
+        document.addEventListener('mouseout', () => {
+            cursorShadow.style.transform = 'scale(1) translate(-50%, -50%)';
+        });
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active', 'slide-in-right', 'slide-in-left');
+            });
+
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active', 'slide-in-right'); // Adjust the animation class as needed
+
+            // Optional: Delay the removal of the slide-in class to ensure the animation plays fully
+            setTimeout(() => {
+                selectedSection.classList.remove('slide-in-right');
+            }, 1600); // Adjust the delay based on the animation duration
+        }
+
+      </script>
+</body>
+</html>
