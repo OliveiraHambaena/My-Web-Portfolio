@@ -4,215 +4,184 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <title>Oliveira Hambaena Portfolio</title>
   <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            overflow: hidden;
-            background-color: #f5f5f5;
-            text-size-adjust: auto;
-            text-wrap: auto;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      overflow: hidden;
+      background-color: #f5f5f5;
+      text-size-adjust: auto;
+      text-wrap: auto;
+    }
 
-        h1 {
-          text-transform: uppercase;
-        }
+    h1 {
+      text-transform: uppercase;
+    }
 
-        .container {
-            display: flex;
-            width: 100vw;
-            height: 100vh;
-        }
+    .container {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+    }
 
-        /* Left Section */
-        .left-section {
-            background-color: #2c2f48;
-            color: #ffffff;
-            width: 32%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            padding: 2rem;
-            position: fixed;
-            overflow-y: auto;
-        }
+    /* Left Section */
+    .left-section {
+      background-color: #2c2f48;
+      color: #ffffff;
+      width: 32%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 2rem;
+      position: fixed;
+      overflow-y: auto;
+    }
 
-        .intro {
-            margin-bottom: 2rem;
-            margin-top: 6rem;
-        }
+    .intro {
+      margin-bottom: 2rem;
+      margin-top: 6rem;
+    }
 
-        .footer {
-            margin-top: auto;
-        }
+    .footer {
+      margin-top: auto;
+    }
 
-        .social-links {
-            margin-bottom: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+    .social-links {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-        .social-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
+    .social-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
 
-        .resume-link {
-            color: #ff7979;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-            display: inline-block;
-        }
+    .resume-link {
+      color: #ff7979;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      display: inline-block;
+    }
 
-        .navigation {
-            display: flex;
-            justify-content: center; /* Center links horizontally */
-            align-items: center; /* Align items vertically */
-            gap: 1rem; /* Space between links */
-        }
+    .navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
 
-        .navigation a {
-            color: #ffffff; /* White text */
-            text-decoration: none; /* Remove underline */
-            font-weight: bold;
-            padding: 0.5rem 1rem; /* Add padding for clickable area */
-            border: 2px solid transparent; /* Invisible border for hover effect */
-            border-radius: 5px; /* Rounded corners */
-            transition: all 0.3s ease; /* Smooth transitions */
-        }
+    .navigation a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
 
-        .navigation a:hover {
-            color: #ff7979; /* Change color on hover */
-            border-color: #ff7979; /* Add border on hover */
-            background-color: rgba(255, 121, 121, 0.1); /* Subtle background */
-        }
+    .navigation a:hover {
+      color: #ff7979;
+      border-color: #ff7979;
+      background-color: rgba(255, 121, 121, 0.1);
+    }
 
-        .navigation a:active {
-            transform: scale(0.95); /* Press-down effect */
-        }
+    .navigation a:active {
+      transform: scale(0.95);
+    }
 
-        /* Right Section */
-        .right-section {
-          color: black;
-          font-family: "Luckiest Guy", cursive;
-  font-weight: 100;
-  font-style: normal;
-          letter-spacing: 0.2rem;
-          line-height: 1.2;
-            margin-left: 32%; /* Adjusted to match the left section width */
-            width: 68%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-y: scroll;
-            scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
-        }
+    /* Right Section */
+    .right-section {
+      background-color: #f5f5f5;
+      color: black;
+      font-family: "Luckiest Guy", cursive;
+      font-weight: 100;
+      font-style: normal;
+      letter-spacing: 0.2rem;
+      line-height: 1.2;
+      margin-left: 32%;
+      width: 68%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
 
-        .section { 
-            padding: 2rem;
-            height: 100vh; /* Full viewport height for each section */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            scroll-snap-align: start; /* Snap to the start of each section */
-        }
-
-        .section {
-      display: none; /* Initially hide all sections */
+    .section {
+      padding: 2rem;
+      min-height: 100vh;
+      display: none;
     }
 
     .section.active {
       display: block;
     }
 
-    .section {
-  display: none; /* Initially hide all sections */
-}
+    #home {
+      display: block;
+    }
 
-#home {
-  display: block; /* Show the home section by default */
-}
+    @media (max-width: 768px) {
+      .left-section {
+        width: 40%;
+      }
+      .right-section {
+        width: 60%;
+      }
+    }
 
-@media (max-width: 768px) {
-  /* Styles for smaller screens */
-  .left-section {
-    width: 40%;
-    /* Other adjustments */
-  }
-  .right-section {
-    width: 60%;
-    /* Other adjustments */
-  }
-}
+    .cursor-shadow {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 70%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(255, 121, 121, 0.193) 0%, rgba(230, 179, 179, 0) 70%);
+      box-shadow: #f5f5f5;
+      transition: transform 0.15s ease-out;
+    }
 
-.right-section {
-  overflow-y: scroll;
-  height: 100vh;
-}
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
 
-.section {
-  min-height: 100vh; /* Adjust as needed */
-}
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
 
-.cursor-shadow {
-  position: absolute;
-            width: 250px; /* Larger size for shadow */
-            height: 250px; /* Larger size for shadow */
-            border-radius: 70%;
-            pointer-events: none; /* Makes sure shadow does not interfere with user interactions */
-            transform: translate(-50%, -50%); /* Center the shadow on the cursor */
-            
-            /* Subtle gradient effect for seamless fade */
-            background: radial-gradient(circle, rgba(255, 121, 121, 0.193) 0%, rgba(230, 179, 179, 0) 70%);
-            
-            /* Box shadow to add an extra layer of blur */
-            box-shadow: #f5f5f5;
-            
-            transition: transform 0.15s ease-out;
-        }
-
-
-
-        @keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.slide-in-right {
+    .slide-in-right {
       animation: slideInRight 2s forwards;
     }
 
@@ -226,555 +195,613 @@
       font-size: 50px;
       margin-top: 15%;
       transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-      
     }
 
-    .homefonts:hover { 
+    .homefonts:hover {
       transform: translateY(-5px);
-      color: transparent; /* Text becomes transparent */
-      -webkit-text-stroke: 2px #0e0d0d; /* Outline effect for hollow text */
-      
+      color: transparent;
+      -webkit-text-stroke: 2px #0e0d0d;
     }
 
     .para {
       text-align: right;
     }
 
-    .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
-        width: 100%;
-    }
-
-    .project-card {
-        background-color: #ffffff;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 1rem;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    .project-image {
-        max-width: 100%;
-        height: auto;
-        border-radius: 4px;
-        margin-bottom: 1rem;
-    }
-
-    .project-title {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-    }
-
-    .project-link {
-        color: #ff7979;
-        text-decoration: none;
-        font-size: 0.9rem;
-    }
-
-    .project-link:hover {
-        text-decoration: underline;
-    }
-    
-    .project-image {
-        width: 100%; /* Make the image take up the full width of the card */
-        height: 150px; /* Set a fixed height for consistency */
-        object-fit: cover; /* Ensure the image covers the area without distortion */
-        border-radius: 4px; /* Add rounded corners to match the card */
-        margin-bottom: 1rem;
-    }
-
+    /* Home Section */
     .home-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      text-align: left;
     }
 
     .home-photo {
-        flex-shrink: 0;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0) 100%);
+      flex-shrink: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0) 100%);
     }
 
     .profile-photo {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .home-text {
-        max-width: 600px;
+      max-width: 600px;
     }
 
     .home-text h1 {
-        font-size: 2.5rem;
-        color: #ff7979;
-        margin-bottom: 1rem;
+      font-size: 2.5rem;
+      color: #ff7979;
+      margin-bottom: 1rem;
     }
 
     .home-text p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-bottom: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
     .btn {
-        display: inline-block;
-        padding: 0.8rem 1.5rem;
-        background-color: #ff7979;
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #ff7979;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     .btn:hover {
-        background-color: #e06666;
-        transform: translateY(-3px);
+      background-color: #e06666;
+      transform: translateY(-3px);
     }
 
+    /* About Section */
     .about-section {
-    background-color: #2c2f48;
-    color: white;
-    padding: 40px;
-    border-radius: 12px;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.about-title {
-    color: #ff7979;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    position: relative;
-    display: inline-block;
-}
-
-.about-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: #ff7979;
-    border-radius: 2px;
-}
-
-.about-content {
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-.highlight {
-    color: #ff7979;
-    font-weight: 600;
-}
-
-.tech-stacks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.tech-stack {
-    flex: 1;
-    min-width: 200px;
-}
-
-.tech-stack h3 {
-    color: #ff7979;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.icon-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.icon-item {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 121, 121, 0.1);
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 121, 121, 0.3);
-    transition: all 0.3s ease;
-}
-
-.icon-item:hover {
-    background: rgba(255, 121, 121, 0.2);
-    transform: translateY(-3px);
-}
-
-.icon {
-    font-size: 1.3rem;
-    margin-right: 8px;
-    color: #ff7979;
-}
-
-.experience-education {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.exp-edu-item {
-    flex: 1;
-    min-width: 250px;
-}
-
-.exp-edu-item h3 {
-    color: #ff7979;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.exp-edu-item p {
-    margin-bottom: 5px;
-}
-
-.date {
-    color: #aaa;
-    font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-    .about-section {
-        padding: 25px;
+      background-color: #ffffff;
+      color: black;
+      padding: 50px;
+      border-radius: 12px;
+      max-width: 1000px;
+      margin: 3rem auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
-    
+
     .about-title {
-        font-size: 1.8rem;
-    }
-    
-    .tech-stacks, .experience-education {
-        flex-direction: column;
-        gap: 25px;
-    }
-}
-</style>
-<style>
-    .section {
-        display: none; /* Hide all sections by default */
+      color: #ff7979;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
     }
 
-    .section.active {
-        display: block; /* Show only the active section */
+    .about-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: #ff7979;
+      border-radius: 2px;
     }
-</style>
+
+    .about-content {
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .highlight {
+      color: #ff7979;
+      font-weight: 600;
+    }
+
+    .tech-stacks {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .tech-stack h3 {
+      color: #ff7979;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .icon-item {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 121, 121, 0.1);
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 121, 121, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .icon-item:hover {
+      background: rgba(255, 121, 121, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .icon {
+      font-size: 1.3rem;
+      margin-right: 8px;
+      color: #ff7979;
+    }
+
+    .experience-education {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .exp-edu-item {
+      flex: none;
+      width: 100%;
+    }
+
+    .exp-edu-item h3 {
+      color: #ff7979;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .exp-edu-item p {
+      margin-bottom: 5px;
+    }
+
+    .date {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .project-card {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-link {
+      color: #ff7979;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background-color: white;
+      color: #2c2f48;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eee;
+    }
+
+    .contact-title {
+      color: #ff7979;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .contact-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: #ff7979;
+      border-radius: 2px;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 30px;
+    }
+
+    .contact-method {
+      flex: 1;
+    }
+
+    .contact-method h3 {
+      color: #2c2f48;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+    }
+
+    .contact-method h3 i {
+      color: #ff7979;
+      font-size: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      color: #555;
+    }
+
+    .contact-item i {
+      width: 30px;
+      font-size: 1.2rem;
+      color: #ff7979;
+    }
+
+    .social-links-contact {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-link-contact {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 121, 121, 0.1);
+      color: #ff7979;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-link-contact:hover {
+      background: #ff7979;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        padding: 25px;
+      }
+      
+      .contact-title {
+        font-size: 1.8rem;
+      }
+      
+      .contact-row {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+      <!-- Navigation -->
+      <div class="navigation">
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#about" onclick="showSection('about')">About Me</a>
+        <a href="#projects" onclick="showSection('projects')">Projects</a>
+        <a href="#contact" onclick="showSection('contact')">Contact</a>
+      </div>
 
-    <div class="container">
-        <!-- Left Section -->
-        <div class="left-section">
-            <!-- Navigation -->
-            <div class="navigation">
-                <a href="#home" onclick="showSection('home')">Home</a>
-                <a href="#about" onclick="showSection('about')">About Me</a>
-                <a href="#projects" onclick="showSection('projects')">Projects</a>
-                <a href="#contact" onclick="showSection('contact')"> Contact</a>
-            </div>
+      <!-- Intro -->
+      <div style="text-align: center;margin-top: 50%;" class="intro">
+        <h3>Hi my name is</h3>
+        <h1 style="margin-bottom: 2rem; color: #ff7979;">OLIVEIRA HAMBAENA</h1>
+        <p style="color: #ff7979;">I am a</p>
+        <p id="typing"></p>
+      </div>
 
-            <!-- Intro -->
-            <div style="text-align: center;margin-top: 50%;" class="intro">
-                <h3>Hi my name is</h3>
-                <h1 style="margin-bottom: 2rem; color: #ff7979;">OLIVEIRA HAMBAENA</h1>
-                <p style="color: #ff7979;">I am a</p>
-                <p id="typing"></p>
-            </div>
-
-            <div class="footer">
-              <div class="social-links">
-                <a href="https://twitter.com/big_thingMoWHK" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">Twitter</a>
-                <a href="https://github.com/OliveiraHambaena" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">GitHub</a>
-                <a href="https://na.linkedin.com/in/oliveira-hambaena-18580b275" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">LinkedIn</a>
-            </div>
-                <a href="resume.pdf" download class="resume-link">Download My Resume</a>
-                </div>
+      <div class="footer">
+        <div class="social-links">
+          <a href="https://twitter.com/big_thingMoWHK" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">Twitter</a>
+          <a href="https://github.com/OliveiraHambaena" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">GitHub</a>
+          <a href="https://na.linkedin.com/in/oliveira-hambaena-18580b275" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">LinkedIn</a>
         </div>
+        <a href="resume.pdf" download class="resume-link">Download My Resume</a>
+      </div>
+    </div>
 
-
-        <!-- Right Section -->
-        <div class="right-section">
-
-            <div id="home" class="section slide in slide-in-right">
-    <div class="home-content">
-        <div class="home-photo">
+    <!-- Right Section -->
+    <div class="right-section">
+      <!-- Home Section -->
+      <div id="home" class="section active">
+        <div class="home-content">
+          <div class="home-photo">
             <img src="myphoto (3).jpg" alt="Oliveira Hambaena" class="profile-photo">
-        </div>
-        <div class="home-text">
+          </div>
+          <div class="home-text">
             <h1 class="homefonts">Hi, I'm Oliveira Hambaena</h1>
             <p class="para">A passionate software developer and designer, exploring the intersection of technology and creativity.</p>
             <p class="para">I specialize in creating innovative solutions that merge technology and design to solve real-world problems.</p>
             <a class="para btn" href="#about" onclick="showSection('about')">Learn More About Me</a>
+          </div>
         </div>
-    </div>
-</div>
-            
-            <!-- Sections -->
-            <div id="about" class="section slide-in-left">
-    <section class="about-section">
-        <h2 class="about-title">About Me</h2>
-        
-        <div class="about-content">
+      </div>
+
+      <!-- About Me Section -->
+      <div id="about" class="section">
+        <section class="about-section">
+          <h2 class="about-title">About Me</h2>
+          <div class="about-content">
             <p>Hi, I'm <span class="highlight">Oliveira Hambaena</span>, a passionate 3rd-year Software Development student at the Namibia University of Science and Technology.</p>
-            
             <p>My tech journey began as a curious kid exploring every setting on electronic devices, which evolved into expertise in <span class="highlight">hardware repair</span>, <span class="highlight">software troubleshooting</span>, and <span class="highlight">system optimization</span>. I've turned this passion into a service, helping others with their tech challenges.</p>
-            
             <p>Beyond technical skills, I thrive in <span class="highlight">creative domains</span> like VFX, game design, and graphic design. I believe the best solutions merge technical precision with aesthetic appeal.</p>
-        </div>
-        
-        <!-- Tech Stacks -->
-        <div class="tech-stacks">
+          </div>
+          <!-- Tech Stacks -->
+          <div class="tech-stacks">
             <div class="tech-stack">
-                <h3><i class="fas fa-code icon"></i>Languages</h3>
-                <div class="icon-grid">
-                    <div class="icon-item">
-                        <i class="devicon-java-plain icon"></i>
-                        <span>Java</span>
-                    </div>
-                    <div class="icon-item">
-                        <i class="devicon-javascript-plain icon"></i>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="icon-item">
-                        <i class="devicon-html5-plain icon"></i>
-                        <span>HTML5</span>
-                    </div>
-                    <div class="icon-item">
-                        <i class="devicon-css3-plain icon"></i>
-                        <span>CSS3</span>
-                    </div>
-                    <div class="icon-item">
-                        <i class="devicon-php-plain icon"></i>
-                        <span>PHP</span>
-                    </div>
-                    <div class="icon-item">
-                        <i class="devicon-react-original icon"></i>
-                        <span>React</span>
-                    </div>
-                </div>
+              <h3><i class="fas fa-code icon"></i>Languages</h3>
+              <div class="icon-grid">
+                <div class="icon-item"><i class="devicon-java-plain icon"></i><span>Java</span></div>
+                <div class="icon-item"><i class="devicon-javascript-plain icon"></i><span>JavaScript</span></div>
+                <div class="icon-item"><i class="devicon-html5-plain icon"></i><span>HTML5</span></div>
+                <div class="icon-item"><i class="devicon-css3-plain icon"></i><span>CSS3</span></div>
+                <div class="icon-item"><i class="devicon-php-plain icon"></i><span>PHP</span></div>
+                <div class="icon-item"><i class="devicon-react-original icon"></i><span>React</span></div>
+              </div>
             </div>
-            
             <div class="tech-stack">
-                <h3><i class="fas fa-tools icon"></i>Tools</h3>
-                <div class="icon-grid">
-                    <div class="icon-item">
-                        <i class="devicon-git-plain icon"></i>
-                        <span>Git/GitHub</span>
-                    </div>
-                    <div class="icon-item">
-                        <i class="devicon-wordpress-plain icon"></i>
-                        <span>WordPress</span>
-                    </div>
-                    <div class="icon-item">
-                        <i class="devicon-figma-plain icon"></i>
-                        <span>Figma (UI/UX)</span>
-                    </div>
-                    <div class="icon-item">
-                        <i class="devicon-blender-original icon"></i>
-                        <span>Blender</span>
-                    </div>
-                </div>
+              <h3><i class="fas fa-tools icon"></i>Tools</h3>
+              <div class="icon-grid">
+                <div class="icon-item"><i class="devicon-git-plain icon"></i><span>Git/GitHub</span></div>
+                <div class="icon-item"><i class="devicon-wordpress-plain icon"></i><span>WordPress</span></div>
+                <div class="icon-item"><i class="devicon-figma-plain icon"></i><span>Figma (UI/UX)</span></div>
+                <div class="icon-item"><i class="devicon-blender-original icon"></i><span>Blender</span></div>
+              </div>
             </div>
-            
             <div class="tech-stack">
-                <h3><i class="fas fa-server icon"></i>Systems</h3>
-                <div class="icon-grid">
-                    <div class="icon-item">
-                        <i class="devicon-postgresql-plain icon"></i>
-                        <span>Supabase(PostgreSQL)</span>
-                    </div>
-                    <div class="icon-item">
-                        <i class="devicon-microsoftsqlserver-plain icon"></i>
-                        <span>MS SQL Server</span>
-                    </div>
-                    <div class="icon-item">
-                        <i class="fas fa-desktop icon"></i>
-                        <span>Hardware Troubleshooting</span>
-                    </div>
-                </div>
+              <h3><i class="fas fa-server icon"></i>Systems</h3>
+              <div class="icon-grid">
+                <div class="icon-item"><i class="devicon-postgresql-plain icon"></i><span>Supabase(PostgreSQL)</span></div>
+                <div class="icon-item"><i class="devicon-microsoftsqlserver-plain icon"></i><span>MS SQL Server</span></div>
+                <div class="icon-item"><i class="fas fa-desktop icon"></i><span>Hardware Troubleshooting</span></div>
+              </div>
             </div>
-        </div>
-        
-        <!-- Experience & Education -->
-        <div class="experience-education">
+          </div>
+          <!-- Experience & Education -->
+          <div class="experience-education">
             <div class="exp-edu-item">
-                <h3><i class="fas fa-briefcase icon"></i>Experience</h3>
-                <p><strong>Computer Hardware Specialist</strong></p>
-                <p class="date">DX Trading Pty | 2023-2024</p>
-                <p>Diagnosed and repaired hardware/software issues across multiple OS platforms.</p>
-                
-                <p><strong>Freelance Web Developer</strong></p>
-                <p class="date">Pro Empowerment Namibia | 2024</p>
-                <p>Built and optimized WordPress websites with SEO integration.</p>
+              <h3><i class="fas fa-briefcase icon"></i>Experience</h3>
+              <p><strong>Computer Hardware Specialist</strong></p>
+              <p class="date">DX Trading Pty | 2023-2024</p>
+              <p>Diagnosed and repaired hardware/software issues across multiple OS platforms.</p>
+              <p><strong>Freelance Web Developer</strong></p>
+              <p class="date">Pro Empowerment Namibia | 2024</p>
+              <p>Built and optimized WordPress websites with SEO integration.</p>
+            </div>
+            <div class="exp-edu-item">
+              <h3><i class="fas fa-graduation-cap icon"></i>Education</h3>
+              <p><strong>Bachelor of Computer Science</strong></p>
+              <p class="date">Namibia University of Science and Technology | 2023-Present</p>
+              <p>Specializing in Software Development with coursework in algorithms, databases, and web development.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Projects Section -->
+      <div id="projects" class="section">
+        <h1 class="contact-title">Projects</h1>
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <img src="pexels1.jpg" alt="Project 1 Logo" class="project-image">
+            <h3 class="project-title">Project 1</h3>
+            <a href="https://project1-link.com" target="_blank" class="project-link">project1-link.com</a>
+          </div>
+          <!-- Project 2 -->
+          <div class="project-card">
+            <img src="pexels2.jpg" alt="Project 2 Logo" class="project-image">
+            <h3 class="project-title">Project 2</h3>
+            <a href="https://project2-link.com" target="_blank" class="project-link">project2-link.com</a>
+          </div>
+          <!-- Project 3 -->
+          <div class="project-card">
+            <img src="pexels3.jpg" alt="Project 3 Logo" class="project-image">
+            <h3 class="project-title">Project 3</h3>
+            <a href="https://project3-link.com" target="_blank" class="project-link">project3-link.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div id="contact" class="section">
+        <section class="contact-section">
+          <h2 class="contact-title">Get In Touch</h2>
+          
+          <div class="contact-methods">
+            <!-- First Row - Email and Phone -->
+            <div class="contact-row">
+              <div class="contact-method">
+                <h3><i class="fas fa-envelope"></i> Email</h3>
+                <div class="contact-item">
+                  <i class="fas fa-arrow-right"></i>
+                  <span>ollymeansoliveira@gmail.com</span>
+                </div>
+              </div>
+              
+              <div class="contact-method">
+                <h3><i class="fas fa-phone"></i> Phone</h3>
+                <div class="contact-item">
+                  <i class="fas fa-arrow-right"></i>
+                  <span>+264 81 869 6891</span>
+                </div>
+              </div>
             </div>
             
-            <div class="exp-edu-item">
-                <h3><i class="fas fa-graduation-cap icon"></i>Education</h3>
-                <p><strong>Bachelor of Computer Science</strong></p>
-                <p class="date">Namibia University of Science and Technology | 2023-Present</p>
-                <p>Specializing in Software Development with coursework in algorithms, databases, and web development.</p>
-            </div>
-        </div>
-    </section>
-</div>
-
-            <div id="projects" class="section slide-in-right">
-                <h1 class="homefonts">Projects</h1>
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card">
-                      <img src="pexels1.jpg" alt="Project 1 Logo" class="project-image">
-                      <h3 class="project-title">Project 1</h3>
-                      <a href="https://project1-link.com" target="_blank" class="project-link">project1-link.com</a>
-                  </div>
-                    <!-- Project 2 -->
-                    <div class="project-card">
-                      <img src="pexels2.jpg" alt="Project 2 Logo" class="project-image">
-                      <h3 class="project-title">Project 1</h3>
-                      <a href="https://project1-link.com" target="_blank" class="project-link">project1-link.com</a>
-                  </div>
-                    <!-- Project 3  -->
-                    <div class="project-card">
-                      <img src="pexels3.jpg" alt="Project 3 Logo" class="project-image">
-                      <h3 class="project-title">Project 1</h3>
-                      <a href="https://project1-link.com" target="_blank" class="project-link">project1-link.com</a>
-                  </div>
+            <!-- Second Row - Location -->
+            <div class="contact-row">
+              <div class="contact-method">
+                <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                <div class="contact-item">
+                  <i class="fas fa-arrow-right"></i>
+                  <span>Windhoek, Namibia</span>
                 </div>
+              </div>
             </div>
-
-            <div id="contact" class="section slide-in-left">
-                <h1 class="homefonts">Contact Me</h1>
-                <p class="para">
-                    Let’s connect! I enjoy working with people who share the same mindset and enthusiasm for technology. 
-                    Reach out for collaborations or discussions about exciting projects!
-                </p>
+            
+            <!-- Third Row - Social -->
+            <div class="contact-row">
+              <div class="contact-method">
+                <h3><i class="fas fa-share-alt"></i> Social</h3>
+                <div class="social-links-contact">
+                  <a href="https://github.com/OliveiraHambaena" class="social-link-contact" target="_blank">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://linkedin.com/in/OliveiraHambaena" class="social-link-contact" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="#" class="social-link-contact" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="social-link-contact" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
+        </section>
+      </div>
     </div>
+  </div>
 
-    <div class="cursor-shadow"></div>
+  <div class="cursor-shadow"></div>
 
-    <script>
-        const typingText = ["software developer", "software designer", "graphic designer", "database administrator", "UI/UX developer", "3D modeller"];
-        let typingIndex = 0;
-        let charIndex = 0;
-        let typingSpeed = 100;
-    
-        const typingElement = document.getElementById('typing');
-    
-        function type() {
-          if (charIndex < typingText[typingIndex].length) {
-            typingElement.textContent += typingText[typingIndex][charIndex];
-            charIndex++;
-            setTimeout(type, typingSpeed);
-          } else {
-            setTimeout(erase, typingSpeed);
-          }
+  <script>
+    const typingText = ["software developer", "software designer", "graphic designer", "database administrator", "UI/UX developer", "3D modeller"];
+    let typingIndex = 0;
+    let charIndex = 0;
+    let typingSpeed = 100;
+
+    const typingElement = document.getElementById('typing');
+
+    function type() {
+      if (charIndex < typingText[typingIndex].length) {
+        typingElement.textContent += typingText[typingIndex][charIndex];
+        charIndex++;
+        setTimeout(type, typingSpeed);
+      } else {
+        setTimeout(erase, typingSpeed);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typingElement.textContent = typingText[typingIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, typingSpeed);
+      } else {
+        typingIndex++;
+        if (typingIndex >= typingText.length) {
+          typingIndex = 0;
         }
-    
-        function erase() {
-          if (charIndex > 0) {
-            typingElement.textContent = typingText[typingIndex].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(erase, typingSpeed);
-          } else {
-            typingIndex++;
-            if (typingIndex >= typingText.length) {
-              typingIndex = 0;
-            }
-            setTimeout(type, typingSpeed);
-          }
-        }
-    
-        type();
+        setTimeout(type, typingSpeed);
+      }
+    }
 
-        function showSection(sectionId) {
+    type();
+
+    function showSection(sectionId) {
       const sections = document.querySelectorAll('.section');
       sections.forEach(section => {
         section.classList.remove('active');
       });
       document.getElementById(sectionId).classList.add('active');
     }
-    
+
     const cursorShadow = document.querySelector('.cursor-shadow');
 
-        // Add mousemove event to update shadow position
-        document.addEventListener('mousemove', (e) => {
-            const { clientX: x, clientY: y } = e;
-
-            // Move the shadow to follow the cursor
-            cursorShadow.style.left = `${x}px`;
-            cursorShadow.style.top = `${y}px`;
-        });
-
-        // Optional: Add hover effect scaling
-        document.addEventListener('mouseover', () => {
-            cursorShadow.style.transform = 'scale(1.2) translate(-50%, -50%)';
-        });
-
-        document.addEventListener('mouseout', () => {
-            cursorShadow.style.transform = 'scale(1) translate(-50%, -50%)';
-        });
-
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active', 'slide-in-right', 'slide-in-left');
-            });
-
-            const selectedSection = document.getElementById(sectionId);
-            selectedSection.classList.add('active', 'slide-in-right'); // Adjust the animation class as needed
-
-            // Optional: Delay the removal of the slide-in class to ensure the animation plays fully
-            setTimeout(() => {
-                selectedSection.classList.remove('slide-in-right');
-            }, 1600); // Adjust the delay based on the animation duration
-        }
-
-        function showSection(sectionId) {
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => {
-            section.classList.remove('active'); // Hide all sections
-        });
-        document.getElementById(sectionId).classList.add('active'); // Show the selected section
-    }
-
-    // Set the default section to "home"
-    document.addEventListener('DOMContentLoaded', () => {
-        showSection('home');
+    document.addEventListener('mousemove', (e) => {
+      const { clientX: x, clientY: y } = e;
+      cursorShadow.style.left = `${x}px`;
+      cursorShadow.style.top = `${y}px`;
     });
-      </script>
+
+    document.addEventListener('mouseover', () => {
+      cursorShadow.style.transform = 'scale(1.2) translate(-50%, -50%)';
+    });
+
+    document.addEventListener('mouseout', () => {
+      cursorShadow.style.transform = 'scale(1) translate(-50%, -50%)';
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showSection('home');
+    });
+  </script>
 </body>
 </html>
