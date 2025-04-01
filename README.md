@@ -35,6 +35,10 @@ My-Web-Portfolio/
 ├── favicons/          # Favicon assets
 └── myphoto.jpg        # Profile photo
 
+Live Preview
+https://oliveirahambaenawebportfolio.netlify.app/
+https://oliveirahambaenawebportforlio.vercel.app/
+
 Contact
 If you'd like to get in touch, feel free to reach out:
 
