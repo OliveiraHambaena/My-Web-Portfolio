@@ -342,6 +342,35 @@
     color: #ff7979;
   }
   
+  .tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .icon-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .icon-item i,
+  .icon-item img {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .icon-item img {
+    object-fit: contain;
+  }
+  
+  .icon-item span {
+    font-size: 14px;
+    color: #333;
+  }
+  
   .experience-education {
     margin-top: 30px;
     display: flex;
@@ -413,11 +442,23 @@
     color: #ff7979;
     text-decoration: none;
     font-size: 0.9rem;
+    margin-top: 1.5rem; /* Add some space above the link */
+    display: inline-block;
+
   }
   
   .project-link:hover {
     text-decoration: underline;
   }
+  
+  .project-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+
   
   /* Contact Section */
   .contact-section {

@@ -39,6 +39,7 @@ function showSection(sectionId) {
   document.getElementById(sectionId).classList.add('active');
 }
 
+
 const cursorShadow = document.querySelector('.cursor-shadow');
 
 document.addEventListener('mousemove', (e) => {
