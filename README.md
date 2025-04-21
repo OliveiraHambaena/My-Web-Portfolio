@@ -42,6 +42,16 @@ This is a personal portfolio website for Oliveira Hambaena, showcasing skills, p
      - Built with: PHP, MySQL, HTML5, CSS3, JavaScript.
      - [GitHub Repository](https://github.com/OliveiraHambaena/my-coding-projects/tree/main/Login)
 
+   - **Project 6: Movie App**
+     - A React-based movie application that allows users to browse popular movies, search for specific movies, and manage a list of their favorite movies.
+     - Built with: React, Vite, React Router, TMDb API, CSS.
+     - Features:
+       - Browse popular movies fetched from TMDb.
+       - Search for movies by title.
+       - Add movies to a favorites list and view them on a dedicated page.
+       - Responsive design optimized for various screen sizes.
+     - [GitHub Repository](https://github.com/OliveiraHambaena/my-coding-projects/tree/main/Movie%20App)
+
 4. **Contact Section**
    - Provides multiple ways to get in touch, including:
      - Email
