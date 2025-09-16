@@ -1,409 +1,445 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+  <!-- Font Awesome for general icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Devicon for programming language icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  
+  <!-- Updated Favicon Paths -->
+  <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="style.css">
   <title>Oliveira Hambaena Portfolio</title>
-  <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            overflow: hidden;
-            background-color: #f5f5f5;
-            text-size-adjust: auto;
-            text-wrap: auto;
-        }
-
-        h1 {
-          text-transform: uppercase;
-        }
-
-        .container {
-            display: flex;
-            width: 100vw;
-            height: 100vh;
-        }
-
-        /* Left Section */
-        .left-section {
-            background-color: #2c2f48;
-            color: #ffffff;
-            width: 32%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            padding: 2rem;
-            position: fixed;
-            overflow-y: auto;
-        }
-
-        .intro {
-            margin-bottom: 2rem;
-            margin-top: 6rem;
-        }
-
-        .footer {
-            margin-top: auto;
-        }
-
-        .social-links {
-            margin-bottom: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .social-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .resume-link {
-            color: #ff7979;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-            display: inline-block;
-        }
-
-        .navigation {
-            display: flex;
-            justify-content: center; /* Center links horizontally */
-            align-items: center; /* Align items vertically */
-            gap: 1rem; /* Space between links */
-        }
-
-        .navigation a {
-            color: #ffffff; /* White text */
-            text-decoration: none; /* Remove underline */
-            font-weight: bold;
-            padding: 0.5rem 1rem; /* Add padding for clickable area */
-            border: 2px solid transparent; /* Invisible border for hover effect */
-            border-radius: 5px; /* Rounded corners */
-            transition: all 0.3s ease; /* Smooth transitions */
-        }
-
-        .navigation a:hover {
-            color: #ff7979; /* Change color on hover */
-            border-color: #ff7979; /* Add border on hover */
-            background-color: rgba(255, 121, 121, 0.1); /* Subtle background */
-        }
-
-        .navigation a:active {
-            transform: scale(0.95); /* Press-down effect */
-        }
-
-        /* Right Section */
-        .right-section {
-          color: black;
-          font-family: "Luckiest Guy", cursive;
-  font-weight: 100;
-  font-style: normal;
-          letter-spacing: 0.2rem;
-          line-height: 1.2;
-            margin-left: 32%; /* Adjusted to match the left section width */
-            width: 68%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-        }
-
-        .section { 
-            padding: 2rem;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .section p {
-            font-size: 1rem;
-            line-height: 1.6;
-            text-align: center;
-            max-width: 800px;
-        }
-
-        .section {
-      display: none; /* Initially hide all sections */
-    }
-
-    .section.active {
-      display: block;
-    }
-
-    .section {
-  display: none; /* Initially hide all sections */
-}
-
-#home {
-  display: block; /* Show the home section by default */
-}
-
-@media (max-width: 768px) {
-  /* Styles for smaller screens */
-  .left-section {
-    width: 40%;
-    /* Other adjustments */
-  }
-  .right-section {
-    width: 60%;
-    /* Other adjustments */
-  }
-}
-
-.right-section {
-  overflow-y: scroll;
-  height: 100vh;
-}
-
-.section {
-  min-height: 100vh; /* Adjust as needed */
-}
-
-.cursor-shadow {
-  position: absolute;
-            width: 250px; /* Larger size for shadow */
-            height: 250px; /* Larger size for shadow */
-            border-radius: 70%;
-            pointer-events: none; /* Makes sure shadow does not interfere with user interactions */
-            transform: translate(-50%, -50%); /* Center the shadow on the cursor */
-            
-            /* Subtle gradient effect for seamless fade */
-            background: radial-gradient(circle, rgba(255, 121, 121, 0.193) 0%, rgba(230, 179, 179, 0) 70%);
-            
-            /* Box shadow to add an extra layer of blur */
-            box-shadow: #f5f5f5;
-            
-            transition: transform 0.15s ease-out;
-        }
-
-
-
-        @keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.slide-in-right {
-      animation: slideInRight 2s forwards;
-    }
-
-    .slide-in-left {
-      animation: slideInLeft 2s forwards;
-    }
-
-    .homefonts {
-      font-family: "Luckiest Guy", cursive;
-      text-align: right;
-      font-size: 50px;
-      margin-top: 15%;
-      transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-      
-    }
-
-    .homefonts:hover { 
-      transform: translateY(-5px);
-      color: transparent; /* Text becomes transparent */
-      -webkit-text-stroke: 2px #0e0d0d; /* Outline effect for hollow text */
-      
-    }
-
-    .para {
-      text-align: right;
-    }
-    </style>
 </head>
 <body>
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+      <!-- Navigation -->
+      <div class="navigation">
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#about" onclick="showSection('about')">About Me</a>
+        <a href="#projects" onclick="showSection('projects')">Projects</a>
+        <a href="#contact" onclick="showSection('contact')">Contact</a>
+      </div>
 
-    <div class="container">
-        <!-- Left Section -->
-        <div class="left-section">
-            <!-- Navigation -->
-            <div class="navigation">
-                <a href="#home" onclick="showSection('home')">Home</a>
-                <a href="#about" onclick="showSection('about')">About Me</a>
-                <a href="#projects" onclick="showSection('projects')">Projects</a>
-                <a href="#contact" onclick="showSection('contact')"> Contact</a>
-            </div>
+      <!-- Intro -->
+      <div style="text-align: center;margin-top: 50%;" class="intro">
+        <h3>Hi my name is</h3>
+        <h1 style="margin-bottom: 2rem; color: #ff7979;">OLIVEIRA HAMBAENA</h1>
+        <p style="color: #ff7979;">I am a</p>
+        <p id="typing"></p>
+      </div>
 
-            <!-- Intro -->
-            <div style="text-align: center;margin-top: 50%;" class="intro">
-                <h3>Hi my name is</h3>
-                <h1 style="margin-bottom: 2rem; color: #ff7979;">OLIVEIRA HAMBAENA</h1>
-                <p style="color: #ff7979;">I am a</p>
-                <p id="typing"></p>
-            </div>
-
-            <div class="footer">
-              <div class="social-links">
-                <a href="https://twitter.com/big_thingMoWHK" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">Twitter</a>
-                <a href="https://github.com/OliveiraHambaena" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">GitHub</a>
-                <a href="https://na.linkedin.com/in/oliveira-hambaena-18580b275" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;">LinkedIn</a>
-            </div>
-                <a href="resume.pdf" download class="resume-link">Download My Resume</a>
-                </div>
+      <div class="footer">
+        <div class="social-links">
+          <a href="https://twitter.com/big_thingMoWHK" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://github.com/OliveiraHambaena" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://na.linkedin.com/in/oliveira-hambaena-18580b275" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-
-
-        <!-- Right Section -->
-        <div class="right-section">
-
-            <div id="home" class="section slide in slide-in-right">
-              <h1 class="homefonts">Welcome to my page</h1>
-                <p class="para">A passionate software developer and designer, exploring the intersection of technology and creativity.</p>
-                <a class="para" href="#about" class="btn">Learn More</a>
-              </div>
-            
-            <!-- Sections -->
-            <div id="about" class="section slide-in-left">
-                <h1 class="homefonts">About Me</h1>
-                <p class="para">
-                    Hi, I'm Oliveira Hambaena, a 20-year-old software development student in my 3rd year at the Namibia University of Science and Technology, based in Windhoek, Namibia. My passion for technology started at a young age when I would explore every setting and feature of any electronic device I could get my hands on. This curiosity grew into a love for computers, leading me to develop skills in hardware repair, software troubleshooting, and operating system optimization — a field I aim to specialize in one day.
-                </p>
-                <p class="para">
-                    Over time, I turned my passion into a source of income by offering repair and support services for laptops, computers, and other hardware. Beyond technical problem-solving, I’m deeply enthusiastic about VFX, game design, and animation. My creativity extends to graphic design, where I believe I have a natural talent for crafting visually appealing designs. I’m always eager to push my limits by learning new programming languages, mastering VFX, and exploring deeper concepts in graphic design.
-                </p>
-                <p class="para">
-                    What sets me apart is my ability to connect with people. I enjoy collaborating with like-minded individuals who share the same goals and vision. I’m not the "typical computer geek" stereotype — I value time away from screens to gain new perspectives, which ultimately allows me to create work that is meaningful to people, not just impressive to tech enthusiasts. My dream is to one day work on operating system development, or in any field where I can merge creativity with technical problem-solving.
-                </p>
-            </div>
-
-            <div id="projects" class="section slide-in-right">
-                <h1 class="homefonts">Projects</h1>
-                <p class="para">
-                    Some highlights of my projects include:<br>
-                    - Management Systems<br>
-                    - Responsive Website Designs<br>
-                    - Game Development<br>
-                    - Creative Graphic Designs<br>
-                </p>
-            </div>
-
-            <div id="contact" class="section slide-in-left">
-                <h1 class="homefonts">Contact Me</h1>
-                <p class="para">
-                    Let’s connect! I enjoy working with people who share the same mindset and enthusiasm for technology. 
-                    Reach out for collaborations or discussions about exciting projects!
-                </p>
-            </div>
-        </div>
+        <a href="resume.pdf" download class="resume-link">Download My Resume</a>
+      </div>
     </div>
 
-    <div class="cursor-shadow"></div>
+    <!-- Right Section -->
+    <div class="right-section">
+      <!-- Home Section -->
+      <div id="home" class="section active">
+        <div class="home-content">
+          <div class="home-photo">
+            <img src="myphoto.jpg" alt="Oliveira Hambaena" class="profile-photo">
+          </div>
+          <div class="home-text">
+            <h1 class="homefonts">Hi, I'm Oliveira Hambaena</h1>
+            <p class="para">A passionate software developer and designer, exploring the intersection of technology and creativity.</p>
+            <p class="para">I specialize in creating innovative solutions that merge technology and design to solve real-world problems.</p>
+            <a class="para btn" href="#about" onclick="showSection('about')">Learn More About Me</a>
+          </div>
+        </div>
+      </div>
 
-    <script>
-        const typingText = ["software developer", "software designer", "graphic designer", "database administrator", "UI/UX developer", "3D modeller"];
-        let typingIndex = 0;
-        let charIndex = 0;
-        let typingSpeed = 100;
-    
-        const typingElement = document.getElementById('typing');
-    
-        function type() {
-          if (charIndex < typingText[typingIndex].length) {
-            typingElement.textContent += typingText[typingIndex][charIndex];
-            charIndex++;
-            setTimeout(type, typingSpeed);
-          } else {
-            setTimeout(erase, typingSpeed);
-          }
-        }
-    
-        function erase() {
-          if (charIndex > 0) {
-            typingElement.textContent = typingText[typingIndex].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(erase, typingSpeed);
-          } else {
-            typingIndex++;
-            if (typingIndex >= typingText.length) {
-              typingIndex = 0;
-            }
-            setTimeout(type, typingSpeed);
-          }
-        }
-    
-        type();
+      <!-- About Me Section -->
+      <div id="about" class="section">
+        <section class="about-section">
+          <h2 class="about-title">About Me</h2>
+          <div class="about-content">
+            <p>Hi, I'm <span class="highlight">Oliveira Hambaena</span>, a passionate 3rd-year Software Development student at the Namibia University of Science and Technology.</p>
+            <p>My tech journey began as a curious kid exploring every setting on electronic devices, which evolved into expertise in <span class="highlight">hardware repair</span>, <span class="highlight">software troubleshooting</span>, and <span class="highlight">system optimization</span>. I've turned this passion into a service, helping others with their tech challenges.</p>
+            <p>Beyond technical skills, I thrive in <span class="highlight">creative domains</span> like VFX, game design, and graphic design. I believe the best solutions merge technical precision with aesthetic appeal.</p>
+          </div>
+          <!-- Tech Stacks -->
+          <div class="tech-stacks">
+            <div class="tech-stack">
+              <h3><i class="fas fa-code icon"></i>Languages</h3>
+              <div class="icon-grid">
+                <div class="icon-item"><i class="devicon-java-plain icon"></i><span>Java</span></div>
+                <div class="icon-item"><i class="devicon-javascript-plain icon"></i><span>JavaScript</span></div>
+                <div class="icon-item"><i class="devicon-typescript-plain icon"></i><span>TypeScript</span></div>
+                <div class="icon-item"><i class="devicon-python-plain icon"></i><span>Python</span></div>
+                <div class="icon-item"><i class="devicon-kotlin-plain icon"></i><span>Kotlin</span></div>
+                <div class="icon-item"><i class="devicon-html5-plain icon"></i><span>HTML5</span></div>
+                <div class="icon-item"><i class="devicon-css3-plain icon"></i><span>CSS3</span></div>
+                <div class="icon-item"><i class="devicon-php-plain icon"></i><span>PHP</span></div>
+                <div class="icon-item"><i class="devicon-react-original icon"></i><span>React</span></div>
+                <div class="icon-item"><i class="devicon-react-original icon"></i><span>React Native</span></div>
+              </div>
+            </div>
+            <div class="tech-stack">
+              <h3><i class="fas fa-tools icon"></i>Tools</h3>
+              <div class="icon-grid">
+                <div class="icon-item"><i class="devicon-git-plain icon"></i><span>Git/GitHub</span></div>
+                <div class="icon-item"><i class="devicon-wordpress-plain icon"></i><span>WordPress</span></div>
+                <div class="icon-item"><i class="devicon-figma-plain icon"></i><span>Figma (UI/UX)</span></div>
+                <div class="icon-item"><i class="devicon-blender-original icon"></i><span>Blender</span></div>
+                <div class="icon-item"><i class="devicon-jira-plain icon"></i><span>Jira</span></div>
+                <div class="icon-item pink-svg">
+                  <span class="icon pink-svg">
+                    <!-- Notion SVG -->
+                    <svg fill="currentColor" fill-rule="evenodd" height="24" width="24" viewBox="0 0 24 24"><title>Notion</title><path clip-rule="evenodd" d="M15.257.055l-13.31.98C.874 1.128.5 1.83.5 2.667v14.559c0 .654.233 1.213.794 1.96l3.129 4.06c.513.653.98.794 1.962.745l15.457-.932c1.307-.093 1.681-.7 1.681-1.727V4.954c0-.53-.21-.684-.829-1.135l-.106-.078L18.34.755c-1.027-.746-1.45-.84-3.083-.7zm-8.521 4.63c-1.263.086-1.549.105-2.266-.477L2.647 2.76c-.186-.187-.092-.42.375-.466l12.796-.933c1.074-.094 1.634.28 2.054.606l2.195 1.587c.093.047.326.326.047.326l-13.216.794-.162.01zM5.263 21.193V7.287c0-.606.187-.886.748-.933l15.176-.886c.515-.047.748.28.748.886v13.81c0 .609-.093 1.122-.934 1.168l-14.523.84c-.842.047-1.215-.232-1.215-.98zm14.338-13.16c.093.422 0 .842-.422.89l-.699.139v10.264c-.608.327-1.168.513-1.635.513-.747 0-.934-.232-1.495-.932l-4.576-7.185v6.952l1.448.327s0 .84-1.169.84l-3.221.186c-.094-.187 0-.654.327-.747l.84-.232V9.853L7.832 9.76c-.093-.42.14-1.026.794-1.073l3.456-.232 4.763 7.279v-6.44l-1.214-.14c-.094-.513.28-.887.747-.933l3.223-.187z"></path></svg>
+                  </span>
+                  <span>Notion</span>
+                </div>
+                <div class="icon-item"><i class="devicon-slack-plain icon"></i><span>Slack</span></div>
+              </div>
+            </div>
+            <div class="tech-stack">
+              <h3><i class="fas fa-server icon"></i>Systems</h3>
+              <div class="icon-grid">
+                <div class="icon-item"><i class="devicon-postgresql-plain icon"></i><span>Supabase(PostgreSQL)</span></div>
+                <div class="icon-item"><i class="devicon-microsoftsqlserver-plain icon"></i><span>MS SQL Server</span></div>
+                <div class="icon-item"><i class="fas fa-desktop icon"></i><span>Hardware Troubleshooting</span></div>
+                <div class="icon-item pink-svg">
+                  <span class="icon pink-svg">
+                    <!-- OpenAI SVG -->
+                    <svg fill="currentColor" fill-rule="evenodd" height="24" width="24" viewBox="0 0 24 24"><title>OpenAI</title><path d="M21.55 10.004a5.416 5.416 0 00-.478-4.501c-1.217-2.09-3.662-3.166-6.05-2.66A5.59 5.59 0 0010.831 1C8.39.995 6.224 2.546 5.473 4.838A5.553 5.553 0 001.76 7.496a5.487 5.487 0 00.691 6.5 5.416 5.416 0 00.477 4.502c1.217 2.09 3.662 3.165 6.05 2.66A5.586 5.586 0 0013.168 23c2.443.006 4.61-1.546 5.361-3.84a5.553 5.553 0 003.715-2.66 5.488 5.488 0 00-.693-6.497v.001zm-8.381 11.558a4.199 4.199 0 01-2.675-.954c.034-.018.093-.05.132-.074l4.44-2.53a.71.71 0 00.364-.623v-6.176l1.877 1.069c.02.01.033.029.036.05v5.115c-.003 2.274-1.87 4.118-4.174 4.123zM4.192 17.78a4.059 4.059 0 01-.498-2.763c.032.02.09.055.131.078l4.44 2.53c.225.13.504.13.73 0l5.42-3.088v2.138a.068.068 0 01-.027.057L9.9 19.288c-1.999 1.136-4.552.46-5.707-1.51h-.001zM3.023 8.216A4.15 4.15 0 015.198 6.41l-.002.151v5.06a.711.711 0 00.364.624l5.42 3.087-1.876 1.07a.067.067 0 01-.063.005l-4.489-2.559c-1.995-1.14-2.679-3.658-1.53-5.63h.001zm15.417 3.54l-5.42-3.088L14.896 7.6a.067.067 0 01.063-.006l4.489 2.557c1.998 1.14 2.683 3.662 1.529 5.633a4.163 4.163 0 01-2.174 1.807V12.38a.71.71 0 00-.363-.623zm1.867-2.773a6.04 6.04 0 00-.132-.078l-4.44-2.53a.731.731 0 00-.729 0l-5.42 3.088V7.325a.068.068 0 01.027-.057L14.1 4.713c2-1.137 4.555-.46 5.707 1.513.487.833.664 1.809.499 2.757h.001zm-11.741 3.81l-1.877-1.068a.065.065 0 01-.036-.051V6.559c.001-2.277 1.873-4.122 4.181-4.12.976 0 1.92.338 2.671.954-.034.018-.092.05-.131.073l-4.44 2.53a.71.71 0 00-.365.623l-.003 6.173v.002zm1.02-2.168L12 9.25l2.414 1.375v2.75L12 14.75l-2.415-1.375v-2.75z"></path></svg>
+                  </span>
+                  <span>OpenAI API</span>
+                </div>
+                <div class="icon-item pink-svg">
+                  <span class="icon pink-svg">
+                    <!-- Notion SVG -->
+                    <svg fill="currentColor" fill-rule="evenodd" height="24" width="24" viewBox="0 0 24 24"><title>Notion</title><path clip-rule="evenodd" d="M15.257.055l-13.31.98C.874 1.128.5 1.83.5 2.667v14.559c0 .654.233 1.213.794 1.96l3.129 4.06c.513.653.98.794 1.962.745l15.457-.932c1.307-.093 1.681-.7 1.681-1.727V4.954c0-.53-.21-.684-.829-1.135l-.106-.078L18.34.755c-1.027-.746-1.45-.84-3.083-.7zm-8.521 4.63c-1.263.086-1.549.105-2.266-.477L2.647 2.76c-.186-.187-.092-.42.375-.466l12.796-.933c1.074-.094 1.634.28 2.054.606l2.195 1.587c.093.047.326.326.047.326l-13.216.794-.162.01zM5.263 21.193V7.287c0-.606.187-.886.748-.933l15.176-.886c.515-.047.748.28.748.886v13.81c0 .609-.093 1.122-.934 1.168l-14.523.84c-.842.047-1.215-.232-1.215-.98zm14.338-13.16c.093.422 0 .842-.422.89l-.699.139v10.264c-.608.327-1.168.513-1.635.513-.747 0-.934-.232-1.495-.932l-4.576-7.185v6.952l1.448.327s0 .84-1.169.84l-3.221.186c-.094-.187 0-.654.327-.747l.84-.232V9.853L7.832 9.76c-.093-.42.14-1.026.794-1.073l3.456-.232 4.763 7.279v-6.44l-1.214-.14c-.094-.513.28-.887.747-.933l3.223-.187z"></path></svg>
+                  </span>
+                  <span>Notion</span>
+                </div>
+                <div class="icon-item pink-svg">
+                  <span class="icon pink-svg">
+                    <!-- DeepSeek SVG -->
+                    <svg fill="currentColor" fill-rule="evenodd" height="24" width="24" viewBox="0 0 24 24"><title>DeepSeek</title><path d="M23.748 4.482c-.254-.124-.364.113-.512.234-.051.039-.094.09-.137.136-.372.397-.806.657-1.373.626-.829-.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.156-.708-.311-.955-.65-.172-.241-.219-.51-.305-.774-.055-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.093.172.187.129.323-.082.28-.18.552-.266.833-.055.179-.137.217-.329.14a5.526 5.526 0 01-1.736-1.18c-.857-.828-1.631-1.742-2.597-2.458a11.365 11.365 0 00-.689-.471c-.985-.957.13-1.743.388-1.836.27-.098.093-.432-.779-.428-.872.004-1.67.295-2.687.684a3.055 3.055 0 01-.465.137 9.597 9.597 0 00-2.883-.102c-1.885.21-3.39 1.102-4.497 2.623C.082 8.606-.231 10.684.152 12.85c.403 2.284 1.569 4.175 3.36 5.653 1.858 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.133-.284 4.994-1.86.47.234.962.327 1.78.397.63.059 1.236-.03 1.705-.128.735-.156.684-.837.419-.961-2.155-1.004-1.682-.595-2.113-.926 1.096-1.296 2.746-2.642 3.392-7.003.05-.347.007-.565 0-.845-.004-.17.035-.237.23-.256a4.173 4.173 0 001.545-.475c1.396-.763 1.96-2.015 2.093-3.517.02-.23-.004-.467-.247-.588zM11.581 18c-2.089-1.642-3.102-2.183-3.52-2.16-.392.024-.321.471-.235.763.09.288.207.486.371.739.114.167.192.416-.113.603-.673.416-1.842-.14-1.897-.167-1.361-.802-2.5-1.86-3.301-3.307-.774-1.393-1.224-2.887-1.298-4.482-.02-.386.093-.522.477-.592a4.696 4.696 0 011.529-.039c2.132.312 3.946 1.265 5.468 2.774.868.86 1.525 1.887 2.202 2.891.72 1.066 1.494 2.082 2.48 2.914.348.292.625.514.891.677-.802.09-2.14.11-3.054-.614zm1-6.44a.306.306 0 01.415-.287.302.302 0 01.2.288.306.306 0 01-.31.307.303.303 0 01-.304-.308zm3.11 1.596c-.2.081-.399.151-.59.16a1.245 1.245 0 01-.798-.254c-.274-.23-.47-.358-.552-.758a1.73 1.73 0 01.016-.588c.07-.327-.008-.537-.239-.727-.187-.156-.426-.199-.688-.199a.559.559 0 01-.254-.078c-.11-.054-.2-.19-.114-.358.028-.054.16-.186.192-.21.356-.202.767-.136 1.146.016.352.144.618.408 1.001.782.391.451.462.576.685.914.176.265.336.537.445.848.067.195-.019.354-.25.452z"></path></svg>
+                  </span>
+                  <span>DeepSeek API</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Experience & Education -->
+          <div class="experience-education">
+            <div class="exp-edu-item">
+              <h3><i class="fas fa-briefcase icon"></i>Experience</h3>
+              <p><strong>Computer Hardware Specialist</strong></p>
+              <p class="date">DX Trading Pty | 2023-2024</p>
+              <p>Diagnosed and repaired hardware/software issues across multiple OS platforms.</p>
+              <p><strong>Freelance Web Developer</strong></p>
+              <p class="date">Pro Empowerment Namibia | 2024</p>
+              <p>Built and optimized WordPress websites with SEO integration.</p>
+            </div>
+            <div class="exp-edu-item">
+              <h3><i class="fas fa-graduation-cap icon"></i>Education</h3>
+              <p><strong>Bachelor of Computer Science</strong></p>
+              <p class="date">Namibia University of Science and Technology | 2023-Present</p>
+              <p>Specializing in Software Development with coursework in algorithms, databases, and web development.</p>
+            </div>
+          </div>
+        </section>
+      </div>
 
-        function showSection(sectionId) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(sectionId).classList.add('active');
-    }
-    
-    const cursorShadow = document.querySelector('.cursor-shadow');
+      <!-- Projects Section -->
+      <div id="projects" class="section">
+        <h1 class="contact-title">Projects</h1>
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <img src="project1/project1 (1).png" alt="Project 1 Logo" class="project-image">
+            <h3 class="project-title">Weather App</h3>
+            <p class="project-description">A web application that provides real-time weather updates and forecasts.</p>
+            <p class="project-description" style="text-decoration: underline;">Built with:</p>
+            <div class="tech-icons">
+              <!-- HTML Icon -->
+              <div class="icon-item">
+                <i class="devicon-html5-plain icon"></i>
+                <span>HTML5</span>
+              </div>
+              <!-- CSS Icon -->
+              <div class="icon-item">
+                <i class="devicon-css3-plain icon"></i>
+                <span>CSS3</span>
+              </div>
+              <!-- JavaScript Icon -->
+              <div class="icon-item">
+                <i class="devicon-javascript-plain icon"></i>
+                <span>JavaScript</span>
+              </div>
+              <!-- AccuWeather API Icon -->
+              <div class="icon-item">
+                <img src="project1/AccuWeather.png" alt="AccuWeather API Logo" class="tech-icon">
+                <span>AccuWeather API</span>
+              </div>
+            </div>
+            <a href="https://oliveirahambaena.github.io/WeatherApp/" target="_blank" class="project-link">Live Website</a>
+          </div>
 
-        // Add mousemove event to update shadow position
-        document.addEventListener('mousemove', (e) => {
-            const { clientX: x, clientY: y } = e;
+          <!-- Project 2 -->
+          <div class="project-card">
+            <img src="project2/project1.png" alt="Pro Empowerment Namibia Network Logo" class="project-image">
+            <h3 class="project-title">Pro Empowerment Namibia Network</h3>
+            <p class="project-description">
+              A website for a tutoring company based in Windhoek, Namibia, offering foreign and local language tutoring services.
+            </p>
+            <p class="project-description" style="text-decoration: underline;">Key Features:</p>
+            <p class="project-description">
+              Student intake form for applications, meeting scheduling form with email submission, about section with company description and staff details, Google Business registration and domain setup, custom email address configuration.
+            </p>
+            <p class="project-description" style="text-decoration: underline;">Built with:</p>
+            <div class="tech-icons">
+              <!-- WordPress Icon -->
+              <div class="icon-item">
+                <i class="devicon-wordpress-plain icon"></i>
+                <span>WordPress</span>
+              </div>
+              <!-- HTML Icon -->
+              <div class="icon-item">
+                <i class="devicon-html5-plain icon"></i>
+                <span>HTML5</span>
+              </div>
+              <!-- Google Business Icon -->
+              <div class="icon-item">
+                <i class="fas fa-map-marker-alt icon"></i>
+                <span>Google Business</span>
+              </div>
+              <!-- Custom Email Icon -->
+              <div class="icon-item">
+                <i class="fas fa-envelope icon"></i>
+                <span>Custom Email Setup</span>
+              </div>
+            </div>
+            <a href="https://proempowermentnamibianetwork.org/" target="_blank" class="project-link">Live Website</a>
+          </div>
 
-            // Move the shadow to follow the cursor
-            cursorShadow.style.left = `${x}px`;
-            cursorShadow.style.top = `${y}px`;
-        });
+          <!-- Project 3 -->
+          <div class="project-card">
+            <img src="project3/project3.png" alt="Traffic Light Simulation Logo" class="project-image">
+            <h3 class="project-title">Traffic Light Simulation</h3>
+            <p class="project-description">
+              A simulation of a traffic light system that changes colors (red, yellow, green) after a set period, mimicking real-world traffic light behavior.
+            </p>
+            <p class="project-description" style="text-decoration: underline;">Built with:</p>
+            <div class="tech-icons">
+              <!-- HTML Icon -->
+              <div class="icon-item">
+                <i class="devicon-html5-plain icon"></i>
+                <span>HTML5</span>
+              </div>
+              <!-- CSS Icon -->
+              <div class="icon-item">
+                <i class="devicon-css3-plain icon"></i>
+                <span>CSS3</span>
+              </div>
+              <!-- JavaScript Icon -->
+              <div class="icon-item">
+                <i class="devicon-javascript-plain icon"></i>
+                <span>JavaScript</span>
+              </div>
+            </div>
+            <a href="https://oliveirahambaena.github.io/TrafficLights/" target="_blank" class="project-link">Live Website</a>
+          </div>
 
-        // Optional: Add hover effect scaling
-        document.addEventListener('mouseover', () => {
-            cursorShadow.style.transform = 'scale(1.2) translate(-50%, -50%)';
-        });
+          <!-- Project 4 -->
+          <div class="project-card">
+            <img src="project4/project4.png" alt="Traffic Control Game Logo" class="project-image">
+            <h3 class="project-title">Traffic Control Game</h3>
+            <p class="project-description">
+              A traffic avoidance game where the player controls a car using arrow keys. The goal is to avoid other cars, earning points for each successful dodge. The game becomes more challenging as the speed increases with higher scores.
+            </p>
+            <p class="project-description" style="text-decoration: underline;">Built with:</p>
+            <div class="tech-icons">
+              <!-- Java Icon -->
+              <div class="icon-item">
+                <i class="devicon-java-plain icon"></i>
+                <span>Java</span>
+              </div>
+            </div>
+            <a href="https://github.com/OliveiraHambaena/my-coding-projects/tree/main/traffic%20control%20game" target="_blank" class="project-link">GitHub Code</a>
+          </div>
 
-        document.addEventListener('mouseout', () => {
-            cursorShadow.style.transform = 'scale(1) translate(-50%, -50%)';
-        });
+          <!-- Project 5 -->
+          <div class="project-card">
+            <img src="project5/project5.png" alt="Login and Registration System" class="project-image">
+            <h3 class="project-title">Login and Registration System</h3>
+            <p class="project-description">
+              A simple system for user registration and login. Users can register with their details and log in to access a protected homepage.
+            </p>
+            <p class="project-description" style="text-decoration: underline;">Built with:</p>
+            <div class="tech-icons">
+              <!-- PHP Icon -->
+              <div class="icon-item">
+                <i class="devicon-php-plain icon"></i>
+                <span>PHP</span>
+              </div>
+              <!-- MySQL Icon -->
+              <div class="icon-item">
+                <i class="devicon-mysql-plain icon"></i>
+                <span>MySQL</span>
+              </div>
+              <!-- HTML Icon -->
+              <div class="icon-item">
+                <i class="devicon-html5-plain icon"></i>
+                <span>HTML5</span>
+              </div>
+              <!-- CSS Icon -->
+              <div class="icon-item">
+                <i class="devicon-css3-plain icon"></i>
+                <span>CSS3</span>
+              </div>
+              <!-- JavaScript Icon -->
+              <div class="icon-item">
+                <i class="devicon-javascript-plain icon"></i>
+                <span>JavaScript</span>
+              </div>
+            </div>
+            <a href="https://github.com/OliveiraHambaena/my-coding-projects/tree/main/Login" target="_blank" class="project-link">GitHub Code</a>
+          </div>
 
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active', 'slide-in-right', 'slide-in-left');
-            });
+          <!-- Project 6 -->
+          <div class="project-card">
+            <img src="project6/project6.png" alt="Movie App Logo" class="project-image">
+            <h3 class="project-title">Movie App</h3>
+            <p class="project-description">
+              A React-based movie application that allows users to browse popular movies, search for specific movies, manage a list of their favorite movies, and watch trailers for each movie you click.
+            </p>
+            <p class="project-description" style="text-decoration: underline;">Built with:</p>
+            <div class="tech-icons">
+              <!-- React Icon -->
+              <div class="icon-item">
+                <i class="devicon-react-original icon"></i>
+                <span>React</span>
+              </div>
+              <!-- Vite Icon -->
+              <div class="icon-item">
+                <img src="project6/vite-icon.png" alt="Vite Logo" class="tech-icon">
+                <span>Vite</span>
+              </div>
+              <!-- React Router Icon -->
+              <div class="icon-item">
+                <img src="project6/react-router-icon.png" alt="React Router Logo" class="tech-icon">
+                <span>React Router</span>
+              </div>
+              <!-- TMDb API Icon -->
+              <div class="icon-item">
+                <img src="project6/tmdb-icon.png" alt="TMDb API Logo" class="tech-icon">
+                <span>TMDb API</span>
+              </div>
+              <!-- YouTube API Icon -->
+              <div class="icon-item">
+                <i class="fa-brands fa-youtube icon"></i>
+                <span>YouTube API</span>
+              </div>
+              <!-- CSS Icon -->
+              <div class="icon-item">
+                <i class="devicon-css3-plain icon"></i>
+                <span>CSS</span>
+              </div>
+            </div>
+            <a href="https://movie-app-ten-beta.vercel.app/" target="_blank" class="project-link">Live Website</a>
+          </div>
+        </div>
+      </div>
 
-            const selectedSection = document.getElementById(sectionId);
-            selectedSection.classList.add('active', 'slide-in-right'); // Adjust the animation class as needed
+      <!-- Contact Section -->
+      <div id="contact" class="section">
+        <section class="contact-section">
+          <h2 class="contact-title">Get In Touch</h2>
+          
+          <div class="contact-methods">
+            <!-- First Row - Email and Phone -->
+            <div class="contact-method">
+              <h3><i class="fas fa-envelope"></i> Email</h3>
+              <div class="contact-item">
+                  <i class="fas fa-arrow-right"></i>
+                  <a href="mailto:ollymeansoliveira@gmail.com?subject=Hello Oliveira&body=Hi Oliveira,%0D%0A%0D%0AI would like to get in touch with you regarding..." 
+                     target="_blank">
+                      ollymeansoliveira@gmail.com
+                  </a>
+              </div>
+            </div>
+              
+            <div class="contact-method">
+              <h3><i class="fas fa-phone"></i> Phone</h3>
+              <div class="contact-item">
+                <i class="fas fa-arrow-right"></i>
+                <span>+264 81 869 6891</span>
+              </div>
+            </div>
+            
+            <!-- Second Row - Location -->
+            <div class="contact-row">
+              <div class="contact-method">
+                <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                <div class="contact-item">
+                  <i class="fas fa-arrow-right"></i>
+                  <span>Windhoek, Namibia</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Third Row - Social -->
+            <div class="contact-row">
+              <div class="contact-method">
+                <h3><i class="fas fa-share-alt"></i> Social</h3>
+                <div class="social-links-contact">
+                  <a href="https://github.com/OliveiraHambaena" class="social-link-contact" target="_blank">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://linkedin.com/in/OliveiraHambaena" class="social-link-contact" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://twitter.com/big_thingMoWHK" class="social-link-contact" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="https://www.instagram.com/_ollythekid_/" class="social-link-contact" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
 
-            // Optional: Delay the removal of the slide-in class to ensure the animation plays fully
-            setTimeout(() => {
-                selectedSection.classList.remove('slide-in-right');
-            }, 1600); // Adjust the delay based on the animation duration
-        }
+  <div class="cursor-shadow"></div>
 
-      </script>
+  <script src="script.js"></script>
 </body>
 </html>
