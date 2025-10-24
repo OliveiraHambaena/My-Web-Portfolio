@@ -729,3 +729,82 @@
     height: auto;
     display: block;
   }
+  
+  /* Mobile collapse + move navbar into right-section */
+.menu-toggle {
+  display: none; /* shown only on small screens */
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* mobile nav in right section (hidden on desktop) */
+.mobile-nav {
+  display: none;
+  gap: 12px;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+/* Adjustments for narrower screens */
+@media (max-width: 1000px) {
+  .menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 60;
+  }
+
+  /* Collapse left-section to a small top bar when .collapsed is applied */
+  .left-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 160px; /* default collapsed height on tablet */
+    padding: 10px 16px;
+    overflow: hidden;
+    transition: height 0.28s ease, transform 0.28s ease;
+    z-index: 50;
+  }
+
+  .left-section.collapsed {
+    height: 64px; /* compact height when collapsed */
+  }
+
+  /* Hide bulky left content when collapsed */
+  .left-section.collapsed .intro,
+  .left-section.collapsed .social-links,
+  .left-section.collapsed .resume-link,
+  .left-section.collapsed .footer {
+    display: none;
+  }
+
+  /* Show mobile nav inside right-section */
+  .mobile-nav {
+    display: flex;
+  }
+
+  /* Ensure right-section content moves down to allow visibility of left top-bar */
+  .right-section {
+    margin-left: 0;
+    margin-top: 160px; /* matches left-section height */
+    transition: margin-top 0.28s ease;
+  }
+
+  /* when collapsed make more room for page content */
+  .right-section.left-collapsed {
+    margin-top: 64px; /* matches collapsed height */
+  }
+
+  /* keep desktop look at smaller widths (fine-tune) */
+  @media (max-width: 600px) {
+    .left-section { height: 140px; }
+    .left-section.collapsed { height: 56px; }
+    .right-section { margin-top: 140px; }
+    .right-section.left-collapsed { margin-top: 56px; }
+    .mobile-nav { gap: 8px; padding: 8px 0; font-size: 0.95rem; }
+  }
+}
