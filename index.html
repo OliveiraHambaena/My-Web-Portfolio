@@ -35,7 +35,7 @@
 <body>
   <div class="container">
     <!-- Left Section -->
-    <div class="left-section">
+    <div class="left-section" role="dialog" aria-modal="false" aria-hidden="false">
       <!-- Navigation -->
       <div class="navigation">
         <a href="#home" onclick="showSection('home')">Home</a>
@@ -43,6 +43,9 @@
         <a href="#projects" onclick="showSection('projects')">Projects</a>
         <a href="#contact" onclick="showSection('contact')">Contact</a>
       </div>
+
+      <!-- Close button for mobile sidebar -->
+      <button id="sidebar-close" class="sidebar-close" aria-label="Close sidebar">×</button>
 
       <!-- Intro -->
       <div style="text-align: center;margin-top: 50%;" class="intro">
@@ -64,14 +67,17 @@
       <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
     </div>
 
+    <!-- Backdrop used when sidebar is open on mobile -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
     <!-- Right Section -->
     <div class="right-section">
-      <!-- Mobile Navigation -->
-      <nav class="navigation mobile-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      <!-- Mobile Navigation (keeps top nav visible on mobile) -->
+      <nav class="navigation mobile-nav" aria-label="Primary">
+        <a href="#home" class="mobile-nav-link" onclick="showSection('home')">Home</a>
+        <a href="#about" class="mobile-nav-link" onclick="showSection('about')">About Me</a>
+        <a href="#projects" class="mobile-nav-link" onclick="showSection('projects')">Projects</a>
+        <a href="#contact" class="mobile-nav-link" onclick="showSection('contact')">Contact</a>
       </nav>
 
       <!-- Home Section -->
@@ -464,19 +470,60 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+
+<!-- Sidebar toggle script (mobile behavior + accessibility) -->
 <script>
-  // Toggle collapsed left section for mobile
-  (function(){
+  (function () {
     const btn = document.getElementById('menu-toggle');
+    const closeBtn = document.getElementById('sidebar-close');
     const left = document.querySelector('.left-section');
     const right = document.querySelector('.right-section');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link, .navigation a');
 
-    if (!btn || !left || !right) return;
+    function openSidebar() {
+      left.classList.add('open');
+      left.setAttribute('aria-hidden', 'false');
+      backdrop.classList.add('visible');
+      document.body.style.overflow = 'hidden'; // prevent background scroll
+      btn && btn.setAttribute('aria-expanded', 'true');
+    }
 
-    btn.addEventListener('click', () => {
-      left.classList.toggle('collapsed');
-      // when collapsed, ensure right-section top spacing adjusts
-      right.classList.toggle('left-collapsed');
+    function closeSidebar() {
+      left.classList.remove('open');
+      left.setAttribute('aria-hidden', 'true');
+      backdrop.classList.remove('visible');
+      document.body.style.overflow = '';
+      btn && btn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (btn) {
+      btn.addEventListener('click', () => {
+        if (left.classList.contains('open')) closeSidebar();
+        else openSidebar();
+      });
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+    if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
+    // Close sidebar when navigating via mobile links
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // small delay to allow showSection to run/scroll if needed
+        setTimeout(closeSidebar, 50);
+      });
+    });
+
+    // keyboard: ESC closes sidebar
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && left.classList.contains('open')) closeSidebar();
+    });
+
+    // Ensure initial aria states on load
+    document.addEventListener('DOMContentLoaded', () => {
+      left.setAttribute('aria-hidden', 'true');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
     });
   })();
 </script>

@@ -808,3 +808,165 @@
     .mobile-nav { gap: 8px; padding: 8px 0; font-size: 0.95rem; }
   }
 }
+
+/* ----------------------------
+   Mobile sidebar + hamburger
+   ---------------------------- */
+
+/* Hide hamburger on desktop; visible on small screens via media query */
+.menu-toggle {
+  display: none;
+  background: rgba(255, 121, 121, 0.12);
+  border: none;
+  color: #ff7979;
+  font-size: 1.4rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1200;
+}
+
+/* Small close button inside sidebar */
+.sidebar-close {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* Backdrop */
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 990;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+
+/* visible backdrop */
+.sidebar-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile-specific behavior */
+@media (max-width: 768px) {
+
+  /* Show hamburger button (top-left) */
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+  }
+
+  /* Desktop left sidebar becomes off-canvas panel */
+  .left-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 280px;               /* sidebar width when open */
+    max-width: 85%;
+    background: #232534;        /* keep your sidebar navy look */
+    transform: translateX(-110%); /* hidden by default */
+    transition: transform 280ms ease;
+    z-index: 1000;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* When open, slide in */
+  .left-section.open {
+    transform: translateX(0);
+  }
+
+  /* Show close control */
+  .sidebar-close {
+    display: block;
+  }
+
+  /* Hide the large intro content inside left when closed via transform.
+     (we hide by transform rather than display so CSS transitions smooth) */
+  /* (No extra rule needed; whole left-section is off-canvas) */
+
+  /* Top mobile nav stays visible and fixed inside right-section */
+  .mobile-nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 0 12px;
+    z-index: 1050;
+    background: rgba(35,37,52,0.98); /* match sidebar tone, slightly transparent */
+    backdrop-filter: blur(4px);
+  }
+
+  .mobile-nav a {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 6px;
+  }
+
+  /* push right content under the mobile nav */
+  .right-section {
+    margin-left: 0 !important;
+    padding-top: 64px; /* space for mobile nav */
+    transition: padding-top 0.28s ease;
+  }
+
+  /* Ensure profile image scales in sidebar */
+  .profile-photo {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 999px;
+    display: block;
+    margin: 18px auto;
+  }
+
+  /* Make tech icon grid and projects stack better */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    padding: 14px;
+  }
+
+  /* improve button touch targets */
+  .project-link, .resume-link, .menu-toggle {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* make sure devicon / fa icons are readable at smaller sizes */
+  .icon, .tech-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
+
+  /* small screens: reduce left-section width when device is very narrow */
+  @media (max-width: 420px) {
+    .left-section { width: 260px; }
+    .mobile-nav { gap: 12px; font-size: 14px; height: 52px; }
+    .right-section { padding-top: 56px; }
+  }
+}
+
+/* Desktop: keep original left/right layout unchanged above 768px */
