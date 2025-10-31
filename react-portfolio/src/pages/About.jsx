@@ -26,7 +26,7 @@ const ICON_CANDIDATES = {
   react: ["react.svg", "react-original.svg", "React.svg"],
   "react-native": ["react-native.svg", "react-native-original.svg"],
   net: [".NET.svg", "dotnet.svg", "dot-net.svg", "dotnet-color.svg"],
-  csharp: ["CSharp.svg", "csharp.svg"], // <- prefer safe names
+  csharp: ["csharp.svg", "CSharp.svg"], // Updated to use renamed file
   aws: ["AWS.svg", "aws.svg"],
   docker: ["Docker.svg", "docker.svg"],
   kubernetes: ["Kubernetes.svg", "kubernetes.svg", "k8s.svg"],
