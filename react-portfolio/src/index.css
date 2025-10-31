@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@300;600&family=Quicksand:wght@600&display=swap');
+
+:root{
+  --sidebar-width:360px;
+  --dark:#232536;
+  --accent:#ff8c87; /* coral */
+  --muted:#9aa0b0;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%;margin:0}
+
+/* Base: Arial with sans-serif fallback */
+body{font-family: Arial, sans-serif;background:#f5f5f5;color:#111}
+
+.app-root {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:var(--sidebar-width);
+  background:var(--dark);
+  color:#fff;
+  position:fixed; /* Change to fixed */
+  left:0;
+  top:0;
+  height:100vh;
+  z-index:50;
+  transition:transform .28s ease, box-shadow .28s ease;
+  overflow:hidden;
+}
+.sidebar:before {
+  /* subtle radial glow */
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 18px;
+  width: 420px;
+  height: 420px;
+  pointer-events: none;
+  background: radial-gradient(circle at 60% 30%, rgba(255,140,135,0.14), transparent 40%);
+}
+.sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 36px;
+  overflow-y: auto; /* Only if content might overflow on very small screens */
+}
+
+.desktop-nav{display:flex;gap:28px}
+.desktop-nav button{background:transparent;border:0;color:#fff;font-weight:600;cursor:pointer;padding:6px 0;opacity:.95}
+.desktop-nav button.active{color:var(--accent)}
+
+@media (max-width: 999px) {
+  .desktop-nav { display: none; }
+}
+
+.hero-compact{margin-top:60px;text-align:left}
+.hero-compact .intro{font-size:14px;opacity:.9;margin:0 0 8px}
+.hero-compact .name{font-size:28px;letter-spacing:1px;margin:0 0 8px;color:var(--accent);font-weight:700}
+.hero-compact .sub{font-size:14px;color:#f0c6c6;margin:0}
+.hero-compact .sub span{color:#f7f7f7}
+
+.typing{display:inline-block;position:relative}
+.typing .cursor{display:inline-block;width:2px;height:1em;background:var(--accent);margin-left:8px;vertical-align:middle;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.social-list{display:flex;flex-direction:column;gap:8px;margin-top:40px}
+.social-list a{color:#e7e9ef;text-decoration:none;font-size:14px}
+
+.resume{display:inline-block;margin-top:18px;color:var(--accent);text-decoration:none;font-weight:700}
+
+.close-btn{display:none}
+
+/* ===== CONTENT AREA ===== */
+.content-area{
+  margin-left: var(--sidebar-width); /* Push content right */
+  flex:1;
+  min-height:100vh;
+  overflow-y:auto; /* Allow content to scroll */
+  background:#f6f6f6
+}
+.navbar{height:80px;display:flex;align-items:center;background:transparent}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0 28px;width:100%}
+.hamburger{display:none;background:transparent;border:0;font-size:28px;color:var(--dark)}
+.nav-links{display:flex}
+.nav-links button{background:transparent;border:0;padding:8px 12px;cursor:pointer;color:var(--dark);font-weight:600}
+.nav-links button.active{color:var(--accent)}
+
+.page-container{padding:60px 80px;display:flex;align-items:center;justify-content:center}
+.page{max-width:920px;display:flex;align-items:center;gap:48px}
+.page .avatar{width:170px;height:170px;border-radius:50%;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.12);flex-shrink:0}
+
+/* Page navigation - hidden on desktop, shown on mobile */
+.mobile-page-nav{display:none}
+
+/* Desktop-specific styles */
+@media (min-width: 1000px) {
+  /* Hide the top/horizontal page navbar on desktop (keep sidebar .desktop-nav visible) */
+  .navbar,
+  .nav-links {
+    display: none !important;
+    visibility: hidden;
+  }
+  .mobile-page-nav {
+    display: none !important;
+  }
+}
+
+.page .avatar img{width:100%;height:100%;object-fit:cover}
+
+.page .content-right{flex:1}
+
+/* Use Luckiest Guy for large headings / title-like text */
+h1, h2, h3, .site-title, .hero-title, .page h1, .project-title, .page .page-title {
+  font-family: "Luckiest Guy", cursive;
+  letter-spacing: 1px;
+}
+
+/* Ensure the main page heading has appropriate size & accent color */
+.page h1{
+  font-family: "Luckiest Guy", cursive;
+  font-size:46px;
+  color:var(--accent);
+  margin:0 0 18px;
+  letter-spacing:3px;
+}
+
+/* Paragraphs keep Montserrat where used for body text */
+.page p{font-family: "Montserrat", sans-serif;line-height:1.9;color:#0f1724;text-align:left;max-width:640px}
+
+.page .cta{display:inline-block;margin-top:28px;padding:12px 26px;background:var(--accent);color:#fff;border-radius:10px;font-weight:700;letter-spacing:2px}
+
+/* Desktop layout specifics: left sidebar fixed, right content scrolls */
+@media (min-width: 1000px){
+  .sidebar{position:fixed} /* Override any other position values */
+  .content-area{margin-left:var(--sidebar-width); /* Ensure margin is maintained */}
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 999px){
+  :root{--sidebar-width:280px}
+  .app-root{position:relative}
+  .sidebar{position:fixed;left:0;top:0;height:100vh;z-index:70;transform:translateX(-100%);box-shadow:2px 0 18px rgba(0,0,0,.18)}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-inner{padding:20px}
+  
+  .mobile-page-nav{
+    display:flex;
+    gap:16px;
+    margin-bottom:32px;
+    padding:0 16px;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+  }
+  .mobile-page-nav button{
+    background:transparent;
+    border:none;
+    color:var(--dark);
+    font-weight:600;
+    padding:8px 16px;
+    cursor:pointer;
+  }
+  .mobile-page-nav button.active{
+    color:var(--accent);
+    border-bottom:2px solid var(--accent);
+  }
+  
+  .desktop-nav{display:none}
+  .close-btn{display:block;position:absolute;top:12px;right:12px;background:transparent;border:0;color:#fff;font-size:20px}
+
+  .hamburger{display:inline-block}
+  .nav-links{display:none}
+
+  .page-container{padding:28px}
+  .page{flex-direction:column;align-items:center;text-align:center}
+  .page .avatar{width:140px;height:140px}
+  .page h1{font-size:32px}
+  .page p{max-width:420px;margin:18px auto}
+  .page .content-right{width:100%}
+}
+
+/* Projects Page Styles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.project-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-family: "Luckiest Guy", cursive;
+  color: var(--dark);
+  margin: 1rem 0;
+}
+
+.project-description {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* Update icon styles */
+.icon-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fff;
+  border-radius: 28px;
+  padding: 10px 16px;
+  box-shadow: 0 6px 18px rgba(255,140,135,0.06);
+  min-width: 120px;
+}
+
+.icon-item .icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-item img.icon {
+  filter: var(--accent-filter); /* Optional: tint icons to match your accent color */
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.project-link:hover {
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card {
+    padding: 1rem;
+  }
+}
+
+/* Additional small tweaks for consistency */
+a { color: inherit; }
+button { font-family: inherit; }
+
