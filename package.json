@@ -6,5 +6,8 @@
     "dev": "cd react-portfolio && npm run dev",
     "build": "cd react-portfolio && npm run build",
     "preview": "cd react-portfolio && npm run preview"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
