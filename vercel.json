@@ -1,6 +1,0 @@
-{
-  "buildCommand": "npm run build",
-  "outputDirectory": "react-portfolio/dist",
-  "installCommand": "npm install && cd react-portfolio && npm install",
-  "framework": "vite"
-}
