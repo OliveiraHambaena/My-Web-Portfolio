@@ -1,11 +1,11 @@
 {
-  "dependencies": {
-    "react-router-dom": "^7.9.5"
-  },
+  "private": true,
+  "name": "my-web-portfolio",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "cd react-portfolio && npm run dev",
-    "build": "cd react-portfolio && npm run build",
-    "preview": "cd react-portfolio && npm run preview"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "engines": {
     "node": "18.x"
