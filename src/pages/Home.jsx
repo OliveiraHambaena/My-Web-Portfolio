@@ -7,7 +7,10 @@ export default function Home({ current, onNav }) {
       <PageNav current={current} onNav={onNav} />
       <div className="avatar">
         {/* serve from public/old/myphoto.jpg */}
-        <img src="/old/myphoto.jpg" alt="avatar" />
+        <img
+          src="https://res.cloudinary.com/dx4gymyem/image/upload/v1763038588/lead-developer-photo_ppa3ox.jpg"
+          alt="avatar"
+        />
       </div>
 
       <div className="content-right">
