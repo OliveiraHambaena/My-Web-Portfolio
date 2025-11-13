@@ -1,11 +1,57 @@
 import React from "react";
 import PageNav from "../components/PageNav";
 
+// Cloudinary icons mapping for project technologies
+const CLOUDINARY_ICONS = {
+  // Languages & Frameworks
+  "HTML5.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039663/HTML5_mi8e0l.svg",
+  "CSS3.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039660/CSS3_a11wlw.svg",
+  "JavaScript.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039663/JavaScript_g3awzk.svg",
+  "Java.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039663/Java_sgzkc0.svg",
+  "PHP.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039673/PHP_xbcamj.svg",
+  "React.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039674/React_vjzfoe.svg",
+
+  // Tools & Platforms
+  "wordpress.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039686/wordpress_wooj26.svg",
+  "Vite.js.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039686/Vite.js_ahgqwc.svg",
+  "react-router-icon.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039675/react-router-icon_virueu.svg",
+
+  // APIs & Services
+  "AccuWeather.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039658/AccuWeather_fqkxlx.svg",
+  "tmdb-icon.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039677/tmdb-icon_kyazus.svg",
+  "youtube.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039687/youtube_uksgyy.svg",
+
+  // Databases
+  "MySQL.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039665/MySQL_ryx2k0.svg",
+
+  // Fallback
+  "notion.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039671/notion_jriuh5.svg",
+};
+
 const TECH_ICON_STYLE = {
   width: "48px",
   height: "48px",
   objectFit: "contain",
   marginBottom: "6px",
+};
+
+// Optimize Cloudinary URLs for better performance
+const optimizeUrl = (url) => {
+  return url.replace("/upload/", "/upload/f_auto,q_auto,w_64,h_64/");
 };
 
 const ProjectCard = ({
@@ -16,72 +62,85 @@ const ProjectCard = ({
   tech,
   url,
   urlType = "Live Website",
-}) => (
-  <div className="project-card">
-    <img src={img} alt={title} className="project-image" />
-    <h3 className="project-title">{title}</h3>
-    <p className="project-description">{desc}</p>
+}) => {
+  const getIconUrl = (iconName) => {
+    const cloudinaryUrl =
+      CLOUDINARY_ICONS[iconName] || CLOUDINARY_ICONS["notion.svg"];
+    return optimizeUrl(cloudinaryUrl);
+  };
 
-    {features && (
-      <>
-        <p
-          className="project-description"
-          style={{ textDecoration: "underline" }}
-        >
-          Key Features:
-        </p>
-        <p className="project-description">{features}</p>
-      </>
-    )}
+  return (
+    <div className="project-card">
+      <img src={img} alt={title} className="project-image" />
+      <h3 className="project-title">{title}</h3>
+      <p className="project-description">{desc}</p>
 
-    <p className="project-description" style={{ textDecoration: "underline" }}>
-      Built with:
-    </p>
-    <div
-      className="tech-icons"
-      style={{
-        display: "flex",
-        gap: "12px",
-        flexWrap: "wrap",
-        alignItems: "center",
-      }}
-    >
-      {tech.map((t) => (
-        <div
-          key={t.name}
-          className="icon-item"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "88px",
-            textAlign: "center",
-            fontSize: "0.85rem",
-          }}
-        >
-          <img
-            src={`/old/icons/${t.icon}`}
-            alt={`${t.name} Logo`}
-            className="tech-icon"
-            style={TECH_ICON_STYLE}
-            loading="lazy"
-            onError={(e) => {
-              e.currentTarget.onerror = null;
-              e.currentTarget.src = "/old/icons/notion.svg";
+      {features && (
+        <>
+          <p
+            className="project-description"
+            style={{ textDecoration: "underline" }}
+          >
+            Key Features:
+          </p>
+          <p className="project-description">{features}</p>
+        </>
+      )}
+
+      <p
+        className="project-description"
+        style={{ textDecoration: "underline" }}
+      >
+        Built with:
+      </p>
+      <div
+        className="tech-icons"
+        style={{
+          display: "flex",
+          gap: "12px",
+          flexWrap: "wrap",
+          alignItems: "center",
+        }}
+      >
+        {tech.map((t) => (
+          <div
+            key={t.name}
+            className="icon-item"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              width: "88px",
+              textAlign: "center",
+              fontSize: "0.85rem",
             }}
-          />
-          <span>{t.name}</span>
-        </div>
-      ))}
-    </div>
+          >
+            <img
+              src={getIconUrl(t.icon)}
+              alt={`${t.name} Logo`}
+              className="tech-icon"
+              style={TECH_ICON_STYLE}
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = optimizeUrl(
+                  CLOUDINARY_ICONS["notion.svg"]
+                );
+              }}
+            />
+            <span>{t.name}</span>
+          </div>
+        ))}
+      </div>
 
-    {url && (
-      <a href={url} target="_blank" rel="noreferrer" className="project-link">
-        {urlType}
-      </a>
-    )}
-  </div>
-);
+      {url && (
+        <a href={url} target="_blank" rel="noreferrer" className="project-link">
+          {urlType}
+        </a>
+      )}
+    </div>
+  );
+};
 
 export default function Projects({ current, onNav }) {
   const projects = [

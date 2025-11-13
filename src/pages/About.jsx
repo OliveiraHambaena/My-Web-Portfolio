@@ -1,58 +1,69 @@
-import React, { useState } from "react";
+import React from "react";
 import PageNav from "../components/PageNav";
 
-/*
-  ICON_CANDIDATES: for each logical key provide an ordered list of possible filenames
-  (in public/old/icons). The Icon component will try each candidate and fall back to notion.svg.
-*/
-const ICON_CANDIDATES = {
-  java: ["java.svg", "Java.svg", "devicon-java-plain.svg"],
-  javascript: [
-    "javascript.svg",
-    "JavaScript.svg",
-    "devicon-javascript-plain.svg",
-    "js.svg",
-  ],
-  typescript: [
-    "typescript.svg",
-    "TypeScript.svg",
-    "devicon-typescript-plain.svg",
-  ],
-  python: ["python.svg", "Python.svg", "devicon-python-plain.svg"],
-  kotlin: ["kotlin.svg", "Kotlin.svg"],
-  html5: ["html5.svg", "HTML5.svg", "devicon-html5-plain.svg"],
-  css3: ["css3.svg", "CSS3.svg", "devicon-css3-plain.svg"],
-  php: ["php.svg", "PHP.svg", "devicon-php-plain.svg"],
-  react: ["react.svg", "react-original.svg", "React.svg"],
-  "react-native": ["react-native.svg", "react-native-original.svg"],
-  net: [".NET.svg", "dotnet.svg", "dot-net.svg", "dotnet-color.svg"],
-  csharp: ["csharp.svg", "CSharp.svg"], // Updated to use renamed file
-  aws: ["AWS.svg", "aws.svg"],
-  docker: ["Docker.svg", "docker.svg"],
-  kubernetes: ["Kubernetes.svg", "kubernetes.svg", "k8s.svg"],
-  zapier: ["zapier-icon.svg", "zapier.svg"],
-  sqlite: ["SQLite.svg", "sqlite.svg"],
-  unity: ["Unity.svg", "unity.svg"],
-  "unreal-engine": ["Unreal-Engine.svg", "unreal-engine.svg", "unreal.svg"],
-  blender: ["Blender.svg", "blender.svg"],
-  postgresql: ["PostgresSQL.svg", "PostgreSQL.svg", "postgres.svg"],
-  postman: ["postman.svg", "Postman.svg"],
-  "github-codespaces": [
-    "GitHub-Codespaces.svg",
-    "github-codespaces.svg",
-    "codespaces.svg",
-  ],
-  nextjs: ["Next.js.svg", "next.svg", "Nextjs.svg"],
-  nodejs: ["Node.js.svg", "node.svg", "NodeJS.svg"],
-  postman_alt: ["Postman.svg"],
-  deepseek: ["deepseek.svg", "deepseek-color.svg"],
-  notion: ["notion.svg", "notion-color.svg"],
-  openai: ["openai.svg", "openai-color.svg"],
-  flask: ["Flask.svg", "flask.svg"],
-  bootstrap: ["bootstrap.svg", "Bootstrap.svg"],
-  git: ["git.svg", "Git.svg", "git-icon.svg"],
-  ballerina: ["Ballerina.svg", "ballerina.svg"], // ensure correct casing
-  // fallback will be notion.svg if none of the candidates load
+// Cloudinary icons mapping - using your uploaded icons
+const CLOUDINARY_ICONS = {
+  java: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039663/Java_sgzkc0.svg",
+  javascript:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039663/JavaScript_g3awzk.svg",
+  typescript:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039677/TypeScript_shvrif.svg",
+  python:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039673/Python_lo3hxm.svg",
+  kotlin:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039665/Kotlin_oucmei.svg",
+  html5:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039663/HTML5_mi8e0l.svg",
+  css3: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039660/CSS3_a11wlw.svg",
+  php: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039673/PHP_xbcamj.svg",
+  react:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039674/React_vjzfoe.svg",
+  "react-native":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039674/React_vjzfoe.svg", // Using React icon as fallback
+  net: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039658/.NET_anjdrl.svg",
+  csharp:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039660/C-Sharp_tdcqp3.svg",
+  aws: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039658/AWS_vy9pbo.svg",
+  docker:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039662/Docker_vdv831.svg",
+  kubernetes:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039665/Kubernetes_fagx3x.svg",
+  zapier:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039687/zapier-icon_xlb0um.svg",
+  sqlite:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039675/SQLite_cvatdz.svg",
+  unity:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039685/Unity_mkixdy.svg",
+  "unreal-engine":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039686/Unreal-Engine_lj9fsh.svg",
+  blender:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039658/Blender_bskda6.svg",
+  postgresql:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039673/PostgresSQL_wpeqv4.svg",
+  postman:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039673/Postman_snxyzh.svg",
+  "github-codespaces":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039663/GitHub-Codespaces_qt04bo.svg",
+  nextjs:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039666/Next.js_xeygaf.svg",
+  nodejs:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039668/Node.js_inyfe8.svg",
+  deepseek:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039661/deepseek_drw1fj.svg",
+  notion:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039671/notion_jriuh5.svg",
+  openai:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039672/openai_b2s5ns.svg",
+  flask:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039662/Flask_dqbr25.svg",
+  bootstrap:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039658/Bootstrap_onuxyg.svg",
+  git: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039662/Git_ztelou.svg",
+  ballerina:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039658/Ballerina_zdfgek.svg",
+  // Fallback icon
+  fallback:
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039671/notion_jriuh5.svg",
 };
 
 const ICON_GRID_STYLE = {
@@ -79,33 +90,25 @@ const ICON_IMG_STYLE = {
   marginBottom: "6px",
 };
 
-function IconItem({ keyName, label }) {
-  const candidates = ICON_CANDIDATES[keyName] || [keyName + ".svg"];
-  const [pos, setPos] = useState(0);
+// Optimize Cloudinary URLs for better performance
+const optimizeUrl = (url) => {
+  return url.replace("/upload/", "/upload/f_auto,q_auto,w_64,h_64/");
+};
 
-  // currentSrc derived from state so updates immediately
-  const currentSrc = encodeURI(`/old/icons/${candidates[pos] || "notion.svg"}`);
+function IconItem({ keyName, label }) {
+  const iconUrl = CLOUDINARY_ICONS[keyName] || CLOUDINARY_ICONS.fallback;
+  const optimizedUrl = optimizeUrl(iconUrl);
 
   return (
     <div className="icon-item cursor-target" style={ICON_ITEM_STYLE}>
       <img
-        key={pos + "-" + keyName} // force remount when we advance candidate
-        src={currentSrc}
+        src={optimizedUrl}
         alt={label}
         className="icon"
         style={ICON_IMG_STYLE}
         onError={(e) => {
-          // try next candidate if available, else fallback to notion.svg
-          const next = pos + 1;
-          if (next < candidates.length) {
-            setPos(next);
-          } else if (currentSrc !== "/old/icons/notion.svg") {
-            // final fallback
-            setPos(candidates.length); // will make currentSrc point to notion.svg
-          } else {
-            // nothing else to do
-            e.currentTarget.style.display = "none";
-          }
+          // Fallback to notion icon if image fails to load
+          e.target.src = optimizeUrl(CLOUDINARY_ICONS.fallback);
         }}
         loading="lazy"
       />
@@ -114,7 +117,7 @@ function IconItem({ keyName, label }) {
   );
 }
 
-// Add social links component (uses same cursor-target class so TargetCursor will react)
+// Social links component
 const SOCIALS = [
   { id: "twitter", label: "Twitter/X", url: "https://x.com/The1stOliveira" },
   {
@@ -207,7 +210,7 @@ export default function About({ current, onNav }) {
                 <IconItem keyName="react" label="React" />
                 <IconItem keyName="react-native" label="React Native" />
                 <IconItem keyName="net" label=".NET" />
-                <IconItem keyName="csharp" label="C#" />
+                <IconItem keyName="csharp" label="C-Sharp" />
                 <IconItem keyName="flask" label="Flask" />
                 <IconItem keyName="bootstrap" label="Bootstrap" />
                 <IconItem keyName="ballerina" label="Ballerina" />
@@ -277,7 +280,8 @@ export default function About({ current, onNav }) {
               </p>
               <p className="date">WOW TECHNOLOGIES & MARKETING | 2025</p>
               <p>
-                Implemented AI integration into system workflows and automated manual tasks to improve efficiency.
+                Implemented AI integration into system workflows and automated
+                manual tasks to improve efficiency.
               </p>
             </div>
 
@@ -298,7 +302,7 @@ export default function About({ current, onNav }) {
             </div>
           </div>
 
-          {/* New: Connect / Social links */}
+          {/* Connect / Social links */}
           <div className="connect-section" style={{ marginTop: 28 }}>
             <h3 style={{ marginBottom: 8 }}>
               <span className="icon-emoji">{"🔗 "}</span> Connect
