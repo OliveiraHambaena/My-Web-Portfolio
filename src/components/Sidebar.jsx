@@ -162,7 +162,7 @@ export default function Sidebar({ open, onClose, onNav, current }) {
 
         <a
           className="resume"
-          href="Public\old\resume.pdf"
+          href="https://drive.google.com/file/d/1MMfBadHI118D61QyxZ5vjhf0Jx6wBlEp/view?usp=drive_link"
           target="_blank"
           rel="noreferrer"
         >
