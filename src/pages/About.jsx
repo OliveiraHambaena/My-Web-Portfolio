@@ -271,6 +271,14 @@ export default function About({ current, onNav }) {
               <p>
                 Built and optimized WordPress websites with SEO integration.
               </p>
+
+              <p>
+                <strong>Software Developer Intern</strong>
+              </p>
+              <p className="date">WOW TECHNOLOGIES & MARKETING | 2025</p>
+              <p>
+                Implemented AI integration into system workflows and automated manual tasks to improve efficiency.
+              </p>
             </div>
 
             <div className="exp-edu-item">

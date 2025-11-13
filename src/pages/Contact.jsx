@@ -8,28 +8,36 @@ export default function Contact({ current, onNav }) {
       <div className="content-right contact-card">
         <h1>Get In Touch</h1>
 
-        <div className="contact-item">
-          <strong>Email</strong>
-          <a href="mailto:ollymeansoliveira@gmail.com">
-            ollymeansoliveira@gmail.com
-          </a>
-        </div>
+        <div className="contact-grid">
+          <div className="contact-item email-item cursor-target">
+            <div className="contact-icon">📧</div>
+            <strong>Email</strong>
+            <a href="mailto:ollymeansoliveira@gmail.com" className="contact-link">
+              ollymeansoliveira@gmail.com
+            </a>
+          </div>
 
-        <div className="contact-item">
-          <strong>Phone</strong>
-          <span>+264 81 869 6891</span>
-        </div>
+          <div className="contact-item phone-item cursor-target">
+            <div className="contact-icon">📱</div>
+            <strong>Phone</strong>
+            <a href="tel:+264818696891" className="contact-link phone-cta">
+              +264 81 869 6891
+            </a>
+          </div>
 
-        <div className="contact-item">
-          <strong>Location</strong>
-          <span>Windhoek, Namibia</span>
-        </div>
+          <div className="contact-item location-item cursor-target">
+            <div className="contact-icon">📍</div>
+            <strong>Location</strong>
+            <p className="location-text">Windhoek, Namibia</p>
+          </div>
 
-        <div className="contact-item">
-          <strong>Resume</strong>
-          <a href="/old/resume.pdf" target="_blank" rel="noreferrer">
-            Download Resume (PDF)
-          </a>
+          <div className="contact-item resume-item cursor-target">
+            <div className="contact-icon">📄</div>
+            <strong>Resume</strong>
+            <a href="/old/resume.pdf" target="_blank" rel="noreferrer" className="resume-btn">
+              Download Resume
+            </a>
+          </div>
         </div>
       </div>
     </section>
