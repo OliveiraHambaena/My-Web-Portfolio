@@ -86,7 +86,7 @@ const ProjectCard = ({
 export default function Projects({ current, onNav }) {
   const projects = [
     {
-      img: "/old/projects/Weather App.png",
+      img: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763045067/Weather_App_oge53z.png",
       title: "Weather App",
       desc: "A web application that provides real-time weather updates and forecasts.",
       tech: [
@@ -98,7 +98,7 @@ export default function Projects({ current, onNav }) {
       url: "https://oliveirahambaena.github.io/WeatherApp/",
     },
     {
-      img: "/old/projects/Pro Empowerment Namibia Network.png",
+      img: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763045025/Pro_Empowerment_Namibia_Network_ia3q2e.png",
       title: "Pro Empowerment Namibia Network",
       desc: "A website for a tutoring company based in Windhoek, Namibia, offering foreign and local language tutoring services.",
       features:
@@ -110,7 +110,7 @@ export default function Projects({ current, onNav }) {
       url: "https://proempowermentnamibianetwork.org/",
     },
     {
-      img: "/old/projects/Traffic Light Simulation (1).png",
+      img: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763045066/Traffic_Light_Simulation_fbcct0.png",
       title: "Traffic Light Simulation",
       desc: "A simulation of a traffic light system that changes colors (red, yellow, green) after a set period, mimicking real-world traffic light behavior.",
       tech: [
@@ -121,7 +121,7 @@ export default function Projects({ current, onNav }) {
       url: "https://oliveirahambaena.github.io/TrafficLights/",
     },
     {
-      img: "/old/projects/Traffic Control Game.png",
+      img: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763045050/Traffic_Control_Game_srk2py.png",
       title: "Traffic Control Game",
       desc: "A traffic avoidance game where the player controls a car using arrow keys. The goal is to avoid other cars, earning points for each successful dodge. The game becomes more challenging as the speed increases with higher scores.",
       tech: [{ icon: "Java.svg", name: "Java" }],
@@ -129,7 +129,7 @@ export default function Projects({ current, onNav }) {
       urlType: "GitHub Code",
     },
     {
-      img: "/old/projects/Login and Registration System.png",
+      img: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763045024/Login_and_Registration_System_b4fhrb.png",
       title: "Login and Registration System",
       desc: "A simple system for user registration and login. Users can register with their details and log in to access a protected homepage.",
       tech: [
@@ -143,7 +143,7 @@ export default function Projects({ current, onNav }) {
       urlType: "GitHub Code",
     },
     {
-      img: "/old/projects/Movie App.png",
+      img: "https://res.cloudinary.com/dx4gymyem/image/upload/v1763045025/Movie_App_talwys.png",
       title: "Movie App",
       desc: "A React-based movie application that allows users to browse popular movies, search for specific movies, manage a list of their favorite movies, and watch trailers for each movie you click.",
       tech: [
