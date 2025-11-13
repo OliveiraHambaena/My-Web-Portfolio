@@ -9,6 +9,8 @@
 
 *{box-sizing:border-box}
 html,body,#root{height:100%;margin:0}
+/* Prevent horizontal overflow from decorative elements on small screens */
+html, body { overflow-x: hidden; }
 
 /* Base: Arial with sans-serif fallback */
 body{font-family: Arial, sans-serif;background:#f5f5f5;color:#111}
@@ -149,6 +151,8 @@ h1, h2, h3, .site-title, .hero-title, .page h1, .project-title, .page .page-titl
   .sidebar{position:fixed;left:0;top:0;height:100vh;z-index:70;transform:translateX(-100%);box-shadow:2px 0 18px rgba(0,0,0,.18)}
   .sidebar.open{transform:translateX(0)}
   .sidebar-inner{padding:20px}
+  /* Remove the desktop content left margin when sidebar is hidden on mobile */
+  .content-area{ margin-left:0; padding-left:0; }
   
   .mobile-page-nav{
     display:flex;
@@ -183,6 +187,26 @@ h1, h2, h3, .site-title, .hero-title, .page h1, .project-title, .page .page-titl
   .page h1{font-size:32px}
   .page p{max-width:420px;margin:18px auto}
   .page .content-right{width:100%}
+}
+
+/* Smaller tablet adjustments (<=768px) */
+@media (max-width: 768px) {
+  .page-container{padding:20px}
+  .page h1{font-size:28px}
+  .page p{max-width:100%;padding:0 6px;text-align:left}
+  .nav-inner{padding:0 12px}
+  .mobile-page-nav{padding:0 12px}
+}
+
+/* Phone adjustments (<=480px) */
+@media (max-width: 480px) {
+  :root{--sidebar-width:240px}
+  .page-container{padding:16px}
+  .page h1{font-size:24px}
+  .page p{font-size:15px;line-height:1.7;max-width:100%;padding:0 6px}
+  .navbar{height:64px}
+  /* Ensure decorative pseudo elements don't create left overflow */
+  .sidebar:before { left: -80px; width: 360px; height: 360px; }
 }
 
 /* Projects Page Styles */
