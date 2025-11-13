@@ -7,7 +7,7 @@ This is a small Vite + React skeleton implementing a two-column portfolio layout
 
 How to run
 
-1. cd react-portfolio
+1. cd my-web-portfolio
 2. npm install
 3. npm run dev
 

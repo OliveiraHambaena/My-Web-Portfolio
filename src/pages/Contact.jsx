@@ -12,7 +12,10 @@ export default function Contact({ current, onNav }) {
           <div className="contact-item email-item cursor-target">
             <div className="contact-icon">📧</div>
             <strong>Email</strong>
-            <a href="mailto:ollymeansoliveira@gmail.com" className="contact-link">
+            <a
+              href="mailto:ollymeansoliveira@gmail.com"
+              className="contact-link"
+            >
               ollymeansoliveira@gmail.com
             </a>
           </div>
@@ -34,7 +37,12 @@ export default function Contact({ current, onNav }) {
           <div className="contact-item resume-item cursor-target">
             <div className="contact-icon">📄</div>
             <strong>Resume</strong>
-            <a href="/old/resume.pdf" target="_blank" rel="noreferrer" className="resume-btn">
+            <a
+              href="Public\old\resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="resume-btn"
+            >
               Download Resume
             </a>
           </div>

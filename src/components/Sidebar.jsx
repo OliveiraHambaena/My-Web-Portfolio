@@ -162,7 +162,7 @@ export default function Sidebar({ open, onClose, onNav, current }) {
 
         <a
           className="resume"
-          href="/../old/resume.pdf"
+          href="Public\old\resume.pdf"
           target="_blank"
           rel="noreferrer"
         >
