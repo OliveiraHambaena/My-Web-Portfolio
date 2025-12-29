@@ -16,6 +16,10 @@ const CLOUDINARY_ICONS = {
     "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039673/PHP_xbcamj.svg",
   "React.svg":
     "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039674/React_vjzfoe.svg",
+    "Typescript.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039677/TypeScript_shvrif.svg",
+    "Tailwind.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1766973714/tailwindcss-mark.d52e9897_jacct4.svg",
 
   // Tools & Platforms
   "wordpress.svg":
@@ -24,6 +28,22 @@ const CLOUDINARY_ICONS = {
     "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039686/Vite.js_ahgqwc.svg",
   "react-router-icon.svg":
     "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039675/react-router-icon_virueu.svg",
+    "Next.js.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039666/Next.js_xeygaf.svg",
+    "Twillio.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1766972726/twilio-icon-svgrepo-com_crberu.svg",
+    "Mailgun.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1766972726/mailgun-logo_rpnbka.svg",
+    "Hubspot.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1766972726/hubspot_xxgzyb.png",
+    "Airtable.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1766972726/Airtable-Logo_j7vj7d.png",
+    "Slack.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1766972726/slack_npgcph.png",
+    "Google-Sheets.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1766972726/sheets_mjdmdp.png",
+    "Zapier.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039687/zapier-icon_xlb0um.svg",
 
   // APIs & Services
   "AccuWeather.svg":
@@ -36,6 +56,11 @@ const CLOUDINARY_ICONS = {
   // Databases
   "MySQL.svg":
     "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039665/MySQL_ryx2k0.svg",
+    "AWS.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1763039658/AWS_vy9pbo.svg",
+    "Supabase.svg":
+    "https://res.cloudinary.com/dx4gymyem/image/upload/v1766973276/supabase-logo-wordmark--light_dxqqov.svg",
+
 
   // Fallback
   "notion.svg":
@@ -214,6 +239,25 @@ export default function Projects({ current, onNav }) {
         { icon: "CSS3.svg", name: "CSS" },
       ],
       url: "https://movie-app-ten-beta.vercel.app/",
+    },
+    {
+      img: "https://res.cloudinary.com/dx4gymyem/image/upload/v1766971321/Screenshot_2025-12-29_031558_s3wwpo.png",
+      title: "INVOLV company website",
+      desc: " A react based company website for INVOLV, a company that provides software development services and IT related services. The website provides real time quotations and guides users through the process of getting a their unique services from INVOLV.",
+      tech: [
+        { icon: "Typescript.svg", name: "TypeScript" },
+        { icon: "Next.js.svg", name: "Next.js" },
+        { icon: "Tailwind.svg", name: "Tailwind CSS" },
+        { icon: "AWS.svg", name: "AWS" },
+        { icon: "Supabase.svg", name: "Supabase" },
+        { icon: "Zapier.svg", name: "Zapier" },
+        { icon: "Mailgun.svg", name: "Mailgun" },
+        { icon: "Hubspot.svg", name: "Hubspot" },
+        { icon: "Airtable.svg", name: "Airtable" },
+        { icon: "Slack.svg", name: "Slack" },
+        { icon: "Google-Sheets.svg", name: "Google Sheets" },
+      ],
+      url: "https://www.involv-software.com/",
     },
   ];
 
