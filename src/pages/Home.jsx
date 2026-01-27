@@ -20,12 +20,10 @@ export default function Home({ current, onNav }) {
           HAMBAENA
         </h1>
         <p>
-          A passionate software developer and designer, exploring the
-          intersection of technology and creativity.
+        I am a Software Engineer, Tech Entrepreneur, and final-year Computer Science student with a passion for building scalable digital solutions.
         </p>
         <p>
-          I specialize in creating innovative solutions that merge technology
-          and design to solve real-world problems.
+        As the founder of Involv Software Corporation, I specialize in bridging the gap between complex software architecture and real-world business automation. From engineering AI-driven agents to managing critical IT infrastructure, I thrive on solving high-pressure technical challenges with precision and discipline.
         </p>
 
         <a className="cta" href="#about">

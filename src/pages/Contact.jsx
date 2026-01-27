@@ -38,7 +38,7 @@ export default function Contact({ current, onNav }) {
             <div className="contact-icon">📄</div>
             <strong>Resume</strong>
             <a
-              href="https://drive.google.com/file/d/15OykfHskrYOhGpQ62TsMNZjJs9dwurLa/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1g6ycaDg84bnTzXYoqiB5IgvcXsRIvSML/view?usp=drive_link"
               target="_blank"
               rel="noreferrer"
               className="resume-btn"

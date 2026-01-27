@@ -168,28 +168,45 @@ export default function About({ current, onNav }) {
           <h1 className="about-title">About Me</h1>
 
           <div className="about-content">
+
+            <h3>Who I am</h3>
+            <p>I am a results-oriented technologist based in Windhoek, Namibia, currently completing my degree in Computer Science at NUST. My journey in tech is driven by a simple philosophy: <strong>if a process can be optimized, it should be.</strong> Whether I am writing code for a multi-tenant platform or troubleshooting enterprise-level network hardware, I approach every task with the same endurance and focus I bring to my life as a marathon runner.</p>
+
+            <h3>What I do</h3>
+            <p>My expertise spans three core pillars of the modern tech landscape.</p>
             <p>
-              Hi, I'm <span className="highlight">Oliveira Hambaena</span>, a
-              passionate 3rd-year Software Development student at the Namibia
-              University of Science and Technology.
+              <strong>Software Engineering & AI:</strong> I build modern web
+              applications using Next.js, React, and TypeScript, with a strong
+              backend foundation in PHP and SQL. I am particularly interested in
+              the intersection of AI and productivity, having developed custom
+              WhatsApp AI agents and Python-based automation tools to streamline
+              complex workflows. I am currently expanding my mobile development
+              repertoire by mastering Flutter.
+            </p>
+            <p>
+              <strong>Systems & Infrastructure:</strong> With two years of
+              experience as a Computer Hardware Specialist at DX Trading, I am
+              "hardware-fluent." I have hands-on experience installing and
+              managing CCTV, Access Control, and LAN/WAN networks, giving me a
+              holistic understanding of how software interacts with physical
+              environments.
+            </p>
+            <p>
+              <strong>Growth & Marketing Strategy:</strong> I believe that great
+              tech is useless if no one knows it exists. My experience has
+              allowed me to master digital marketing, specifically Email/SMS
+              automation and SEO. I treat marketing as a technical challenge,
+              using data and algorithmic logic to drive measurable sales and
+              engagement.
             </p>
 
-            <p>
-              My tech journey began as a curious kid exploring every setting on
-              electronic devices, which evolved into expertise in{" "}
-              <span className="highlight">hardware repair</span>,{" "}
-              <span className="highlight">software troubleshooting</span>, and{" "}
-              <span className="highlight">system optimization</span>. I've
-              turned this passion into a service, helping others with their tech
-              challenges.
-            </p>
+            <h3>The Founder Mentality</h3>
+            <p>In 2025, I founded Involv Software Corporation to provide a platform for innovation in the Namibian tech space. Leading Involv has taught me the importance of end-to-end ownership—from initial UI/UX design in Figma to deploying secure, cloud-based architectures on AWS. My latest project, UpTop, serves as a testament to my ability to manage complex, multi-user environments with a focus on data privacy and role-based access.</p>
+          
+          <h3>Why Me?</h3>
+          <p>I don’t just build systems; I build reliability. My background as a Sales Representative has honed my ability to communicate technical concepts to non-technical stakeholders, ensuring that the technology always serves the human objective.
 
-            <p>
-              Beyond technical skills, I thrive in{" "}
-              <span className="highlight">creative domains</span> like VFX, game
-              design, and graphic design. I believe the best solutions merge
-              technical precision with aesthetic appeal.
-            </p>
+I am a disciplined learner, a team player, and a proactive problem solver. I am currently holding a learner’s license and am actively working toward full mobility to better serve on-site technical needs. When I am not behind a keyboard, you can find me on the road, training for my next marathon—always pushing for the next milestone.</p>
           </div>
 
           <div className="tech-stacks">
@@ -258,6 +275,15 @@ export default function About({ current, onNav }) {
               <h3>
                 <span className="icon-emoji">{"💼 "}</span> Experience
               </h3>
+
+              <p><strong>Founder & CEO</strong></p>
+              <p className="date">Involv Software Corporation | 2025-Present</p>
+              <p>
+                Founded and led a software development company focused on building scalable digital solutions. Involv provides a suite of technology services, including bespoke web and software development, digital marketing, automation, and IT support, aimed at driving digital transformation and measurable business growth.
+              </p>
+
+
+
               <p>
                 <strong>Computer Hardware Specialist</strong>
               </p>
