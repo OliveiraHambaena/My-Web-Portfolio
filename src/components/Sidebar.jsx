@@ -162,7 +162,7 @@ export default function Sidebar({ open, onClose, onNav, current }) {
 
         <a
           className="resume"
-          href="https://drive.google.com/file/d/1MMfBadHI118D61QyxZ5vjhf0Jx6wBlEp/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1SroaMNGnnPX7L8A55Cncx0CVHRdUKcow/view?usp=drive_link"
           target="_blank"
           rel="noreferrer"
         >
